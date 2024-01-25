@@ -59,9 +59,9 @@ body {
 
 /* HERO SECTION */
 .hero {
-    background-color: rgb(158, 98, 192);
+    background-color: rgb(35, 0, 57);
     text-align: center;
-    color: rgb(152, 230, 206);
+    color: rgb(121, 238, 197);
     padding: 6em;
 }
 
@@ -100,6 +100,18 @@ body {
     padding: 1em
  }
 
+ /* LAYOUT */
+.container {
+   border: 1px solid red;
+   max-width: 1000px;
+   margin: 0 auto;
+}
+
+.two-col-sidebar {
+   display: flex;
+   
+}
+
  /* SOCIAL NAV */
  .social-nav ul {
     margin: 0;
@@ -114,6 +126,25 @@ body {
     padding: 1em;
 }
 
+
+/* STYLING FOR SUB PAGES */
+.page-sub .hero {
+   background-color: rgba(0,0,0,.1);
+   color: rgb(13, 114, 106)
+}
+
+/* COURSEWORK SECTION */
+.coursework {
+   padding: 3em 1em;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+/* PROJECTS SECTION */
+.projects {
+   margin: 2em;
+}
 
 /* FOR WEB DEV PURPOSES ONLY */
 /* body, *{ 
