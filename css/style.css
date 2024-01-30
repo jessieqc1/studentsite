@@ -62,7 +62,7 @@ body {
     background-color: rgb(35, 0, 57);
     text-align: center;
     color: rgb(121, 238, 197);
-    padding: 6em;
+    padding: 6em 1em;
 }
 
 .hero h2 {
@@ -73,13 +73,13 @@ body {
 }
 
 .hero p {
-    max-width: 30 em;
+    max-width: 30em;
     margin: 1em auto;
 }
 
 /* COURSES SECTION */
 .courses {
-    padding: 6em 1em; /*THIS PADS TOP AND BOTTOM AT 6EM, AND LEFT AND RIGHT AT 1 EM. OR YOU CAN USE 4 NUMBERS TO DEFINE TOP, THEN RIGHT, THEN BOTTOM, THEN LEFT*/
+    padding: 6em 1em; /*THIS PADS TOP AND BOTTOM AT 6EM, AND LEFT AND RIGHT AT 1EM. OR YOU CAN USE 4 NUMBERS TO DEFINE TOP, THEN RIGHT, THEN BOTTOM, THEN LEFT*/
     display: grid;
     justify-content: center;
 }
@@ -96,41 +96,55 @@ body {
 
  /* FOOTER */
  footer {
-    border-top: 1 px solid rgba(0, 0, 0, 0.05);
-    padding: 1em
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1em;
  }
+
+  /* SOCIAL NAV */
+  .social-nav ul {
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   list-style: none;
+}
+
+.social-nav a {
+   display: block;
+   padding: 1em;
+}
 
  /* LAYOUT */
 .container {
-   border: 1px solid red;
    max-width: 1000px;
    margin: 0 auto;
 }
 
-.two-col-sidebar {
-   display: flex;
-   
+section {
+   padding: 3em 1em;
 }
 
- /* SOCIAL NAV */
- .social-nav ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    list-style: none;
- }
-
-.social-nav a {
-    display: block;
-    padding: 1em;
+/* SIDEBAR/ASIDE */
+aside {
+   padding: 0 1em;
 }
 
+@media (min-width: 768px) {
+   .two-col-sidebar {
+      display: grid;
+      grid-template-columns: 20em auto;
+   }
+   .two-col-sidebar aside {
+      border-right: 1px solid rgba(0,0,0,0.1);
+      margin: 0 3em 2em 0;
+      padding: .3em  2em 0 0;
+   }
+}
 
 /* STYLING FOR SUB PAGES */
 .page-sub .hero {
    background-color: rgba(0,0,0,.1);
-   color: rgb(13, 114, 106)
+   color: rgb(13, 114, 106);
 }
 
 /* COURSEWORK SECTION */
@@ -144,6 +158,40 @@ body {
 /* PROJECTS SECTION */
 .projects {
    margin: 2em;
+}
+
+
+/* PRIMARY */
+.primary {
+   padding: 0 1em;
+}
+
+/* CODE BLOCKS */
+pre code {
+   width: 100%;
+   display: block;
+   border: 1px solid #ddd;
+   background-color: #fff;
+   padding: 1em 3em;
+   margin-bottom: 1em;
+   line-height: 1.5;
+}
+
+.markup-box {
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   background-color: #fff;
+   padding: 1em 3em;
+   margin-bottom: 1em;
+}
+
+/* DEFINITION LISTS */
+dt {
+   font-weight: bold;
+   margin-top: 1em;
+}
+dd {
+   margin: 0;
 }
 
 /* FOR WEB DEV PURPOSES ONLY */
