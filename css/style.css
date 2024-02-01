@@ -54,7 +54,7 @@ body {
 
  /* MAIN */
  main {
-    background: rgba(172, 1227, 244, 1);
+    background: rgba(172, 127, 244, 0.1);
  }
 
 /* HERO SECTION */
@@ -143,8 +143,8 @@ aside {
 
 /* CUSTOM STYLING FOR SPECIFIC AND SUB PAGES */
 .page-sub .hero {
-   background-color: rgba(0,0,0,.1);
-   color: rgb(13, 114, 106);
+   background-color: rgba(111, 33, 150, 0.1);
+   color: rgb(120, 37, 183);
 }
 
 .page-home .hero {
@@ -181,7 +181,7 @@ aside {
 }
 
 /* CODE BLOCKS */
-pre, code {
+pre code {
    width: 100%;
    display: block;
    border: 1px solid #ddd;
@@ -191,13 +191,8 @@ pre, code {
    line-height: 1.5;
    overflow-wrap: break-word;
    white-space: pre-wrap;
-   color: red;
 }
 
-/* NOTES PAGE SCROLLBAR FIX FOR GISTS
-pre, code {
-   
-}  */
 
 /* NOTES PAGE SCROLLBAR FIX FOR GISTS */
 @media (min-width: 768px) and (max-width: 910px) {
