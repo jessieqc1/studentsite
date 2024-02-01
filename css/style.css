@@ -25,7 +25,7 @@ body {
  }
 
  header a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none; /*REMOVES THE UNDERLINE */
  }
 
@@ -54,14 +54,14 @@ body {
 
  /* MAIN */
  main {
-    background: rgba(0,0,0,.05);
+    background: rgba(172, 1227, 244, 1);
  }
 
 /* HERO SECTION */
 .hero {
     background-color: rgb(35, 0, 57);
     text-align: center;
-    color: rgb(121, 238, 197);
+    color: rgb(172, 227, 244);
     padding: 6em 1em;
 }
 
@@ -141,11 +141,25 @@ aside {
    }
 }
 
-/* STYLING FOR SUB PAGES */
+/* CUSTOM STYLING FOR SPECIFIC AND SUB PAGES */
 .page-sub .hero {
    background-color: rgba(0,0,0,.1);
    color: rgb(13, 114, 106);
 }
+
+.page-home .hero {
+   background-image: url('../img/rocks.jpg');
+   background-size: cover;
+   background-position: center;
+   padding: 20vh 1em;
+}
+
+.page-home header {
+   background-color: transparent; 
+   position: absolute;
+   width: 100%;
+}
+
 
 /* COURSEWORK SECTION */
 .coursework {
@@ -167,7 +181,7 @@ aside {
 }
 
 /* CODE BLOCKS */
-pre code {
+pre, code {
    width: 100%;
    display: block;
    border: 1px solid #ddd;
@@ -175,6 +189,22 @@ pre code {
    padding: 1em 3em;
    margin-bottom: 1em;
    line-height: 1.5;
+   overflow-wrap: break-word;
+   white-space: pre-wrap;
+   color: red;
+}
+
+/* NOTES PAGE SCROLLBAR FIX FOR GISTS
+pre, code {
+   
+}  */
+
+/* NOTES PAGE SCROLLBAR FIX FOR GISTS */
+@media (min-width: 768px) and (max-width: 910px) {
+   .gist {
+       max-width: 400px;
+       border: 10px solid red;
+   }
 }
 
 .markup-box {
