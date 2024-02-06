@@ -213,6 +213,12 @@ aside {
 /* PROJECTS SECTION */
 .projects {
    margin: 2em;
+   padding: 2em;
+   flex-basis: 20em;
+   background-size: cover;
+   border-radius: 1em;
+   box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.1);
+   font-family: Helvetica, Arial, sans-serif
 }
 
 
