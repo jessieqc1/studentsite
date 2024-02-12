@@ -82,6 +82,7 @@ body {
     padding: 6em 1em; /*THIS PADS TOP AND BOTTOM AT 6EM, AND LEFT AND RIGHT AT 1EM. OR YOU CAN USE 4 NUMBERS TO DEFINE TOP, THEN RIGHT, THEN BOTTOM, THEN LEFT*/
     display: grid;
     justify-content: center;
+    display: block;
 }
 
 .courses ul {
@@ -191,7 +192,7 @@ aside {
 .page-home .hero {
    background-image: url('../img/rocks.jpg');
    background-size: cover;
-   background-position: center;
+   background-position: center 60%;
    padding: 20vh 1em;
 }
 
