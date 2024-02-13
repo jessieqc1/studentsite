@@ -1,0 +1,67 @@
+/* --------------------
+CSS TABLE OF CONTENTS 
+    # GLOBAL RESET
+        # BASE CONTENT
+            # BASE TYPOGRAPHY    
+                # BODY
+                # HEADINGS
+                # PARAGRAPH
+
+--------------------- */
+body {
+    /* SET BODY TO 14PX */
+    font-size: 87.5%;
+    line-height: 1.5;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(0 0 0 / 0.8);
+}
+
+/* @media (min-width: 768px) {
+    body {
+        font-size: 100%;
+    }
+}
+@media (min-width: 1200px) {
+    body {
+        font-size: 112.5%;
+    }
+} */
+
+h1 {
+    font-size: 2.25em;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 1.875em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.3125em;
+}
+
+h5 {
+    font-size: 1.125em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+p {
+    margin: 0.5em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: .5em 0;
+}
+
+/* MEDIA */
+img {
+    max-width: 100%;
+    height: auto;
+}
