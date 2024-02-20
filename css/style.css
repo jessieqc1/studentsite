@@ -17,7 +17,7 @@ body {
 /* SITE LAYOUT*/
 body {
    display: grid;
-   grid-template-rows: 1fr auto;
+   grid-template-rows: auto 1fr auto;
    min-height: 100vh;
 }
 
@@ -196,6 +196,10 @@ aside {
 .page-sub .hero {
    background-color: rgba(111, 33, 150, 0.1);
    color: rgb(120, 37, 183);
+}
+
+.page-home {
+   grid-template-rows: 1fr auto;
 }
 
 .page-home .hero {
