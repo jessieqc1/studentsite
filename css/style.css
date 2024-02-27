@@ -29,7 +29,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr; /*THIS SPLITS COL INTO EVEN FRACTIONS*/
     align-items: center;
-    border: 10px solid red;
  }
 
  header a {
@@ -63,7 +62,6 @@ body {
  /* MAIN */
  main {
     background: rgba(172, 127, 244, 0.1);
-    border: 15px solid yellow;
  }
 
 /* HERO SECTION */
