@@ -24,10 +24,10 @@ body {
  /* SITE STRUCTURE */
  header {
     background-color: rgb(35, 0, 57);
-    color: rgba(0, 0, 0, 0.8); /*LAST NUMBER IS TRANSPARENCY*/
+    color: rgba(0, 0, 0, 0.8);
     padding: 1em;
     display: grid;
-    grid-template-columns: 1fr 1fr; /*THIS SPLITS COL INTO EVEN FRACTIONS*/
+    grid-template-columns: 1fr 1fr; /*THIS SPLITS COL INTO EVEN FRACTIONS - THIS WILL MAKE IT SO ART 128 LINK AND NOTES LINK TAKE UP THE SAME AMOUNT OF SPACE*/
     align-items: center;
  }
 

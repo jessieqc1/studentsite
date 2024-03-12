@@ -12,15 +12,13 @@ document.addEventListener('DOMContentLoaded', function() {
             menunav.setAttribute("data-navstate", "open");
         };
     });
+    
+    // CLOSE THE MENU NAV WHEN A STICKY NAV LINK IS CLOSED
+    const fixednavlinks= document.querySelectorAll('.fixed nav a'); 
+    fixednavlinks.forEach(function(el) {
+        el.onclick = function() {
+        menunav.setAttribute("data-navstate", "closed");
+        };
+    });
 
-});
-
-// CLOSE THE MENU NAV WHEN A STICKY NAV LINK IS CLOSED
-
-const fixednavlinks= document.querySelectorAll('.fixed nav a'); 
-const menunav = document.querySelector(".toggle-nav");
-fixednavlinks.forEach(function(el) {
-    el.onclick = function() {
-      menunav.setAttribute("data-navstate", "closed");
-    };
 });

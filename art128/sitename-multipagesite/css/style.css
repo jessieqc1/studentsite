@@ -149,8 +149,8 @@ form input[type="submit"] {
     border-radius: .5em;
 }
 
-.button:hover,
-button:hover,
+/* .button:hover,
+button:hover, */
 form input[type="submit"]:hover {
     background-color: rgba(0 0 153 / 1);
     border-color: rgba (0 0 153 / 1);
@@ -158,7 +158,8 @@ form input[type="submit"]:hover {
     text-decoration: none;
 }
 
-.button.alt {
+/* THESE ARE COPIED OVER FROM THE FILE WE DUPLICATED EARLIER, BUT WE DON'T ACTUALLY HAVE ANY A TAG CLASS="BUTTONS" IN THE RELEVANT HTML FILE */
+/* .button.alt {
     background-color: transparent;
     color: rgba(0 0 153 / 1);
 }
@@ -166,6 +167,10 @@ form input[type="submit"]:hover {
 .button.alt:hover {
     background-color: rgba(0 0 153 / 1);
     color: rgba(255 255 255 / 1);
+} */
+
+form input[type="submit"]:hover {
+    cursor: pointer;
 }
 
 /* LAYOUT */

@@ -156,6 +156,7 @@ form input[type="submit"]:hover {
     border-color: rgba (0 0 153 / 1);
     color: rgba(255 255 255 / 1);
     text-decoration: none;
+    cursor: pointer;
 }
 
 .button.alt {
@@ -365,10 +366,11 @@ section {
     text-align: center;
 }
 
-.hero h1, p {
+.hero h1, .hero p {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    text-wrap: balance;
 }
 
 /* TOGGLE NAV */
