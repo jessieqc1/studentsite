@@ -369,10 +369,9 @@ section {
     padding: 6em 4%;
     background-color: rgba(0 0 0 /.1);
     text-align: center;
-    border: 2px solid red;
 }
 
-.hero h1, p {
+.hero h1, .hero p {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -589,13 +588,12 @@ form input[type="submit"] {
 
 /* OFFSET MAIN by adding padding above main so that the header doesn't cover it up*/
 .site-header.fixed + main { 
-    padding-top: 4.2em;
+    padding-top: 4.5em;
 }
 
 /* OFFSET SECTIONS about and contact WHEN HEADER IS FIXED */
 .fixed + .site-main .section-title {
     margin-top: 2em;
-    border: 2px solid green;
 }
 
 /* SECTION FORMATTING */
