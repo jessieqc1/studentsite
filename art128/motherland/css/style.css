@@ -367,7 +367,8 @@ section {
 /* HERO */
 .hero {
     padding: 6em 4%;
-    background-color: rgba(0 0 0 /.1);
+    background-image: url('../img/waterbuffalo.jpg');
+    /* background-color: rgba(0 0 0 /.1); */
     text-align: center;
 }
 
