@@ -34,7 +34,7 @@ body {
     font-size: 87.5%; /* 14px */
     font-family: Helvetica, Arial, sans-serif;
     line-height: 1.4;
-    color: rgba(0 0 0 / .8)
+    color: #ededed;
 }
 
 /* HEADINGS */
@@ -309,6 +309,11 @@ body.demo::before {
     background: white;
 }
 
+/* SITE FOOTER */
+.site-footer {
+    background: #dbb818;
+}
+
 /* ON LARGER SCREENS PLACE LOGO LEFT AND NAV RIGHT */
 @media (min-width: 768px) {
     .site-header .container {
@@ -369,7 +374,11 @@ section {
     padding: 6em 4%;
     background-image: url('../img/waterbuffalo.jpg');
     /* background-color: rgba(0 0 0 /.1); */
-    text-align: center;
+    text-align: left;
+}
+
+.hero h1 {
+    color: #dbb818;
 }
 
 .hero h1, .hero p {
@@ -400,7 +409,7 @@ section {
     }
     .toggle-nav .site-nav ul {
         display: block;
-        text-align: center;
+        text-align: left;
     }
     .toggle-nav .site-nav a:hover {
         background-color: rgba(0 0 153/1);
@@ -489,7 +498,7 @@ article {
 article h1, 
 article h1 + .subhead, /*this is a subhead that follows an h1 */
 article .date {
-    text-align: center;
+    text-align: left;
 }
 
 article h2.subhead {
@@ -568,7 +577,7 @@ form input[type="submit"] {
 /* CUSTOM SITE CSS */
 
 .section-title {
-    text-align: center;
+    text-align: left;
     margin-bottom: 2em;
 }
 
@@ -598,13 +607,10 @@ form input[type="submit"] {
 }
 
 /* SECTION FORMATTING */
-#about {
-    background: rgba(0 100 0/.05);
+#purpose, #roots, #ngai {
+    background-color: #223228;
 }
 
-#contact {
-    background: rgba(50 0 100/.1);
-}
 
 /* VERTICAL MEDIA QUERY add height/padding to bottom of contact section only for large screens. Now when we click contact, we're directed to the top of the contact section even on large screens, rather than showing contact as halfway down the screen - credit to Romina */
 
