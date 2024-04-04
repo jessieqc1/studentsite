@@ -261,7 +261,7 @@ body.demo::before {
 
     .row {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly
         margin-left: -2%;
         margin-right: -2%;
     }
@@ -288,6 +288,10 @@ body.demo::before {
         max-width: 21%;
     }
 
+    .row > .column.five-twelfths {
+        max-width: 37.6667%;
+    }
+
     .row > .column.centered {
         margin-left: auto;
         margin-right: auto;
@@ -307,6 +311,7 @@ body.demo::before {
 .site-header {
     padding: .5em 0;
     background: white;
+    position: absolute;
 }
 
 /* SITE FOOTER */
@@ -375,13 +380,14 @@ section {
     background-image: url('../img/waterbuffalo.jpg');
     /* background-color: rgba(0 0 0 /.1); */
     text-align: left;
+    min-height: 100vh;
 }
 
 .hero h1 {
     color: #dbb818;
 }
 
-.hero h1, .hero p {
+.hero h1, .hero h4 {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -586,7 +592,7 @@ form input[type="submit"] {
     display: block;
     width: 100px;
     margin: 0.5em auto;
-    border-bottom: 3px solid rgba(0 0 0/.2);
+    /* border-bottom: 3px solid rgba(0 0 0/.2); */
 }
 
 /* FIXED HEADER */
