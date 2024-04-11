@@ -28,13 +28,14 @@
             #TOGGLE-NAV (Default for Small Screens)
 --------------------------------- */
 
-
 /* TYPOGRAPHY - BASE BODY*/
 body {
     font-size: 87.5%; /* 14px */
-    font-family: Helvetica, Arial, sans-serif;
     line-height: 1.4;
     color: #ededed;
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-weight: 200;
+    font-style: normal;
 }
 
 /* HEADINGS */
@@ -55,6 +56,9 @@ h1 {
 h2 {
     font-size: 2.25em; /* 36px */
     line-height: 1.1;
+    font-family: "utopia-std", serif;
+    font-weight: 600;
+    font-style: normal;
 }
 h3 {
     font-size: 1.5em; /* 24px */
@@ -188,7 +192,7 @@ body {
 
 /* CONTAINER */
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 4%;
 }
@@ -209,7 +213,7 @@ body {
         font-size: 112.5% /* 18px */
     }
     .container {
-        max-width: 1200px;
+        max-width: 1200px; /*note to self: up above I set this to 1400. do I need to change it here too?*/
     }
 }
 
@@ -261,7 +265,6 @@ body.demo::before {
 
     .row {
         display: flex;
-        justify-content: space-evenly
         margin-left: -2%;
         margin-right: -2%;
     }
@@ -308,16 +311,34 @@ body.demo::before {
 /* SITE STRUCTURE */
 
 /* SITE HEADER */
+
 .site-header {
-    padding: .5em 0;
-    background: white;
+    padding: .5em 1.5em .5em 2.5em; /* this is my header padding */
     position: absolute;
+    color: white;
+    width: 100%;
+    align-items: baseline;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
 }
 
 /* SITE FOOTER */
 .site-footer {
     background: #dbb818;
 }
+
+footer .site-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
 
 /* ON LARGER SCREENS PLACE LOGO LEFT AND NAV RIGHT */
 @media (min-width: 768px) {
@@ -329,12 +350,19 @@ body.demo::before {
 }
 
 /* STYLING FOR BOTH HEADER AND FOOTER */
-.site-header a,
+.site-header a {
+    color: rgba(255 255 255/1);
+}
+
 .site-footer a {
     color: rgba(0 0 0/.8);
 }
 
-.site-header a:hover 
+.site-header a:hover {
+    color: rgba(255 255 255/1);
+    text-decoration: none;
+}
+ 
 .site-footer a:hover {
     color: rgba(0 0 0/1);
     text-decoration: none;
@@ -345,7 +373,7 @@ body.demo::before {
     font-size: 1.5em;
     margin: 0;
     padding-top: .5em;
-    text-align: center;
+    text-align: left;
 }
 
 /* SITE NAV */
@@ -355,7 +383,7 @@ body.demo::before {
     padding: 0;
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .site-nav a {
@@ -377,14 +405,23 @@ section {
 /* HERO */
 .hero {
     padding: 6em 4%;
-    background-image: url('../img/waterbuffalo.jpg');
+    background-image: linear-gradient(
+        10deg,
+        rgba(0, 0, 0, 0.8),
+        rgb(0, 0, 0, 0.1)), 
+        url('../img/waterbuffalo.jpg');
+    background-size: cover;
+    background-position: 0% 80%;
     /* background-color: rgba(0 0 0 /.1); */
     text-align: left;
-    min-height: 100vh;
+    min-height: 100svh;
 }
 
 .hero h1 {
     color: #dbb818;
+    font-family: "utopia-std", serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .hero h1, .hero h4 {
@@ -493,52 +530,6 @@ section {
     }
   }
 
-/* ARTICLES */
-
-article {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-article h1, 
-article h1 + .subhead, /*this is a subhead that follows an h1 */
-article .date {
-    text-align: left;
-}
-
-article h2.subhead {
-    font-weight: normal;
-    font-size: 1.5em;
-    line-height: 1.2;
-    /* opacity: .7; */
-}
-
-article .date {
-    font-size: .75em;
-    /* opacity: .5; */
-    margin-bottom: 3em;
-}
-
-article p + h1, 
-article p + h2, 
-article p + h3, 
-article p + h4, 
-article p + h5, 
-article p + h6 {
-    margin-top: 1.5em;
-}
-
-article p:first-of-type:first-letter {
-    font-size: 3em;
-    line-height: 1em;
-    background: #480897;
-    color: #fff;
-    padding: .2em .4em;
-    margin-right: .3em;
-    margin-bottom: .2em;
-    float: left;
-}
 
 /* FORMS */
 
@@ -584,7 +575,7 @@ form input[type="submit"] {
 
 .section-title {
     text-align: left;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .section-title::after {
@@ -592,15 +583,14 @@ form input[type="submit"] {
     display: block;
     width: 100px;
     margin: 0.5em auto;
-    /* border-bottom: 3px solid rgba(0 0 0/.2); */
 }
 
 /* FIXED HEADER */
-.site-header.fixed {
+/* .site-header.fixed {
     position: fixed; 
     width: 100%;
     background-color: white;
-}
+} */
 
 /* OFFSET MAIN by adding padding above main so that the header doesn't cover it up*/
 .site-header.fixed + main { 
@@ -624,4 +614,10 @@ form input[type="submit"] {
     #contact {
         padding-bottom: 20em;
     }
+}
+
+
+/* PURPOSE SECTION STYLING */
+#purpose p {
+    max-width: 25em;
 }
