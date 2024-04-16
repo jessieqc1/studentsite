@@ -31,10 +31,10 @@
 /* TYPOGRAPHY - BASE BODY*/
 body {
     font-size: 87.5%; /* 14px */
-    line-height: 1.4;
+    line-height: 1.7;
     color: #ededed;
-    font-family: "franklin-gothic-atf", sans-serif;
-    font-weight: 200;
+    font-family: franklin-gothic-atf, sans-serif;
+    font-weight: 100;
     font-style: normal;
 }
 
@@ -45,7 +45,7 @@ body {
 */
 
 h1, h2, h3, h4, h5, h6 {
-    margin: .5em 0; /* Using ems gives margins relative to the font size */
+    margin: .5em 0; /*Using ems gives margins relative to the font size*/
 }
 
 h1 {
@@ -204,13 +204,13 @@ body {
 
 @media (min-width: 1050px) {
     body {
-        font-size: 100%; /* 16px */
+        font-size: 87.5%; /* 14px */
     }
 }
 
 @media (min-width: 1250px) {
     body {
-        font-size: 112.5% /* 18px */
+        font-size: 100% /* 16px */
     }
     .container {
         max-width: 1200px; /*note to self: up above I set this to 1400. do I need to change it here too?*/
@@ -258,12 +258,15 @@ body.demo::before {
 /* SEMANTIC GRID SYSTEM */
 
 .row > .column {
-    margin-bottom: 4%;
+    margin-bottom: 4%; 
+    
+    /*further down I need to add code to override this just for the purpose section, in order to reduce the bottom margin and pull the map up */
 }
 
 @media (min-width: 768px) {
 
     .row {
+        --gridgap: 4%;
         display: flex;
         margin-left: -2%;
         margin-right: -2%;
@@ -275,35 +278,63 @@ body.demo::before {
         margin-right: 2%;
     }
 
-    .row > .column.one-half {
-        max-width: 46%;
+    .row > .column.one-twelfth {
+        max-width: 4.3333%;
     }
 
-    .row > .column.one-third {
-        max-width: 29.3333%;
+    .row > .column.two-twelfths {
+        max-width: 12.6667%;
     }
 
-    .row > .column.two-thirds {
-        max-width: 62.6666%;
-    }
-
-    .row > .column.one-fourth {
+    .row > .column.three-twelfths {
         max-width: 21%;
+    }
+
+    .row > .column.four-twelfths {
+        max-width: 29.3333%;
     }
 
     .row > .column.five-twelfths {
         max-width: 37.6667%;
     }
 
+    .row > .column.six-twelfths {
+        max-width: 46%;
+    }
+
+    .row > .column.seven-twelfths {
+        max-width: 54.3333%;
+    }
+
+    .row > .column.eight-twelfths {
+        max-width: 62.6666%;
+    }
+
+    .row > .column.nine-twelfths {
+        max-width: 71%;
+    }
+
+    .row > .column.ten-twelfths {
+        max-width: 79.3333%;
+    }
+
+    .row > .column.eleven-twelfths {
+        max-width: 87.6667%;
+    }
+
     .row > .column.centered {
         margin-left: auto;
         margin-right: auto;
     }
+
+    .row > .push-one-twelfth {
+        margin-left: calc(8.3333% - (var(--gridgap) / 2) + var(--gridgap));
+      }
 }
 
 /* FOR DEMO PURPOSES ONLY */
 .demo .column{
-    background: white;
+    background: purple;
     padding: .5em;
     text-align: center;
 }
@@ -422,12 +453,27 @@ section {
     font-family: "utopia-std", serif;
     font-weight: 600;
     font-style: normal;
+    margin: 0;
 }
 
-.hero h1, .hero h4 {
+.hero h1, .hero h3, .hero h4 {
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 0 200px;
+}
+
+.hero h3 {
+    color: #dbb818;
+    font-family: "utopia-std", serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.hero h4 {
+    padding-top: 20px;
+}
+
+.hero > .container {
+    padding-top: 7em;
 }
 
 /* TOGGLE NAV */
@@ -620,4 +666,13 @@ form input[type="submit"] {
 /* PURPOSE SECTION STYLING */
 #purpose p {
     max-width: 25em;
+}
+
+.row > .extention {
+    border: 2px solid red;
+}
+
+/* ROOTS SECTION STYLING */
+#roots .map {
+    margin-top: -150px;
 }
