@@ -131,6 +131,13 @@ a:hover {
     margin-right: auto;
 }
 
+blockquote {
+    font-family: "marydale", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2em;
+}
+
 /* IMAGES */
 img {
     max-width: 100%;
@@ -177,7 +184,6 @@ form input[type="submit"]:hover {
     cursor: pointer;
 }
 
-/* LAYOUT */
 
 /* SIMPLE RESET */
 * { 
@@ -203,57 +209,23 @@ body {
 }
 
 @media (min-width: 1050px) {
+    /* SMALL LAPTOP SIZED STYLING GOES HERE */
     body {
         font-size: 87.5%; /* 14px */
     }
 }
 
 @media (min-width: 1250px) {
+    /* MEDIUM SIZED STYLING GOES HERE */
     body {
         font-size: 100% /* 16px */
     }
     .container {
-        max-width: 1200px; /*note to self: up above I set this to 1400. do I need to change it here too?*/
+        max-width: 1400px;
     }
 }
 
-/* FOR DEMO PURPOSES ONLY */
-body.demo {
-    padding: 4em 0;
-}
-body.demo::before {
-    content: "Small (Mobile) Less Than 768px";
-    background-color: #933;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    text-align: center;
-    color: white;
-    padding: .5em;
-    z-index: 10;
-}
 
-@media (min-width: 768px) {
-    body.demo::before {
-        content: "Midsize (Tablet) 768px - 1050px";
-        background-color: #bcb83d;
-    }
-}
-
-@media (min-width: 1050px) {
-    body.demo::before {
-        content: "Large (Notebook) 1050px - 1250px";
-        background-color: #693;
-    }
-}
-
-@media (min-width: 1250px) {
-    body.demo::before {
-        content: "Extra-large (Notebook) 1250px +";
-        background-color: #0099cc;
-    }
-}
 
 /* SEMANTIC GRID SYSTEM */
 
@@ -330,6 +302,10 @@ body.demo::before {
     .row > .push-one-twelfth {
         margin-left: calc(8.3333% - (var(--gridgap) / 2) + var(--gridgap));
       }
+
+    .row > .push-two-twelfths {
+        margin-left: calc(16.6667% - (var(--gridgap) / 2) + var(--gridgap));
+    }
 }
 
 /* FOR DEMO PURPOSES ONLY */
@@ -454,27 +430,32 @@ section {
     font-weight: 600;
     font-style: normal;
     margin: 0;
+    font-size: clamp(4em, 8vw, 5em);
 }
 
-.hero h1, .hero h3, .hero h4 {
-    max-width: 600px;
-    margin: 0 auto 0 200px;
-}
-
-.hero h3 {
+.hero h1 span {
     color: #dbb818;
     font-family: "utopia-std", serif;
     font-weight: 600;
     font-style: italic;
+    display: block;
+    font-size: .6em;
 }
 
-.hero h4 {
-    padding-top: 20px;
+.hero h2 {
+    padding-top: .5em;
+    font-family: "marydale", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(2em, 4vw, 3em);
 }
+
 
 .hero > .container {
-    padding-top: 7em;
+    padding-top: 10em;
+    padding-left: 8%
 }
+
 
 /* TOGGLE NAV */
 @media (max-width: 767px) {
@@ -631,12 +612,6 @@ form input[type="submit"] {
     margin: 0.5em auto;
 }
 
-/* FIXED HEADER */
-/* .site-header.fixed {
-    position: fixed; 
-    width: 100%;
-    background-color: white;
-} */
 
 /* OFFSET MAIN by adding padding above main so that the header doesn't cover it up*/
 .site-header.fixed + main { 
@@ -662,17 +637,53 @@ form input[type="submit"] {
     }
 }
 
+    
 
 /* PURPOSE SECTION STYLING */
 #purpose p {
-    max-width: 25em;
+    max-width: 20em;
 }
 
-.row > .extention {
-    border: 2px solid red;
+#purpose img {
+    transform: rotate(-15deg);
+    transform-origin: 50% 60% 0;
+    padding-top: 3em;
 }
+
+@media (max-width: 768px) {
+    #purpose p {
+        max-width: 100%;
+    }
+}
+
+
 
 /* ROOTS SECTION STYLING */
-#roots .map {
-    margin-top: -150px;
+@media (min-width: 1050px) {
+    #roots .map {
+        margin-top: -200px;
+        scale: 1.05;
+        transform-origin: left center;
+    }
 }
+
+@media (min-width: 1400px) {
+    #roots .map {
+        scale: 1.2;
+    }
+}
+
+/* BORDER STYLING */
+#ngai {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+/*FOR WEB DEV TESTING ONLY */
+/* body * {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+} */
