@@ -5,6 +5,7 @@
             #BODY
             #HEADINGS
             #PARAGRAPHS
+            #BLOCKQUOTES
             #LINKS
             #HELPERS
         #MEDIA
@@ -23,9 +24,15 @@
                 # site-id (LOGO)
             #FOOTER
             #SECTIONS
-            #SUB PAGES
+                #HERO
+                #PUROSE
+                #ROOTS
+                #NGAI
         #SITE NAVIGATION
             #TOGGLE-NAV (Default for Small Screens)
+        #FORMS
+        #CUSTOM SITE CSS
+           
 --------------------------------- */
 
 /* TYPOGRAPHY - BASE BODY*/
@@ -84,6 +91,15 @@ p {
     text-wrap: pretty;
 }
 
+/* BLOCKQUOTES */
+
+blockquote {
+    font-family: "marydale", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2em;
+}
+
 /* LINKS */
 a {
     color: rgba(0 0 153 0.8);
@@ -96,7 +112,7 @@ a:hover {
 }
 
 /* HELPER CLASSES */
-.text-centered {
+/* .text-centered {
     text-align: center;
 }
 
@@ -130,14 +146,8 @@ a:hover {
 .horiz-center {
     margin-left: auto;
     margin-right: auto;
-}
+} */
 
-blockquote {
-    font-family: "marydale", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.2em;
-}
 
 /* IMAGES */
 img {
@@ -197,12 +207,6 @@ body {
     /* box-shadow: inset 0 0 0 5px red; */
 }
 
-/* CONTAINER */
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 4%;
-}
 
 /* MEDIA QUERIES */
 @media (min-width: 768px) {
@@ -226,14 +230,17 @@ body {
     }
 }
 
-
+/* CONTAINER */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
 
 /* SEMANTIC GRID SYSTEM */
 
 .row > .column {
     margin-bottom: 4%; 
-    
-    /*further down I need to add code to override this just for the purpose section, in order to reduce the bottom margin and pull the map up */
 }
 
 @media (min-width: 768px) {
@@ -334,9 +341,35 @@ header {
     align-items: center;
 }
 
+.site-header a {
+    color: rgba(255 255 255/1);
+}
+
+.site-header a:hover {
+    color: rgba(255 255 255/1);
+    text-decoration: none;
+}
+
+/* LOG0 AREA */
+.site-id h1 {
+    font-size: 1.5em;
+    margin: 0;
+    padding-top: .5em;
+    text-align: left;
+}
+
 /* SITE FOOTER */
 .site-footer {
     background: #dbb818;
+}
+
+.site-footer a {
+    color: rgba(0 0 0/.8);
+}
+
+.site-footer a:hover {
+    color: rgba(0 0 0/1);
+    text-decoration: none;
 }
 
 footer .site-nav ul {
@@ -348,6 +381,7 @@ footer .site-nav ul {
 }
 
 
+
 /* ON LARGER SCREENS PLACE LOGO LEFT AND NAV RIGHT */
 @media (min-width: 768px) {
     .site-header .container {
@@ -355,33 +389,6 @@ footer .site-nav ul {
         justify-content: space-between;
         /* align-items: center; */
     }
-}
-
-/* STYLING FOR BOTH HEADER AND FOOTER */
-.site-header a {
-    color: rgba(255 255 255/1);
-}
-
-.site-footer a {
-    color: rgba(0 0 0/.8);
-}
-
-.site-header a:hover {
-    color: rgba(255 255 255/1);
-    text-decoration: none;
-}
- 
-.site-footer a:hover {
-    color: rgba(0 0 0/1);
-    text-decoration: none;
-}
-
-/* LOG0 AREA */
-.site-id h1 {
-    font-size: 1.5em;
-    margin: 0;
-    padding-top: .5em;
-    text-align: left;
 }
 
 /* SITE NAV */
@@ -401,13 +408,14 @@ footer .site-nav ul {
 
 .site-nav .menu-button {
     display: none;
-    border: none; /*mark*/
-    background-color: transparent; /*mark*/
+    border: none; 
+    background-color: transparent;
 }
 
 /* SECTIONS */
 section {
     padding: 3em 0;
+    border: 2px solid red;
 }
 
 /* HERO */
@@ -456,6 +464,84 @@ section {
     padding-top: 10em;
     padding-left: 8%
 }
+
+/* SECTION STYLING */
+.green {
+    background-color: #223228;
+}
+
+/* PURPOSE SECTION STYLING */
+#purpose p {
+    max-width: 20em;
+}
+
+#purpose img {
+    transform: rotate(-15deg);
+    transform-origin: 50% 60% 0;
+    padding-top: 3em;
+}
+
+@media (max-width: 768px) {
+    #purpose p {
+        max-width: 100%;
+    }
+}
+
+
+/* ROOTS SECTION STYLING */
+.site-main {
+    overflow-x: hidden;
+}
+
+@media (min-width: 1050px) {
+    #roots .map {
+        margin-top: -15%;
+        scale: 1.05;
+        transform-origin: left center;
+    }
+
+    #roots .chop {
+        scale: 2;
+        transform-origin: center;
+    }
+}
+
+@media (min-width: 1400px) {
+    #roots .map {
+        scale: 1.15;
+    }
+}
+
+#roots .chop {
+    transform: rotate(-90deg);
+    /* transform-origin: 50% 60% 0; */
+    margin-top: -70%;
+}
+
+/* NGAI SECTION STYLING */
+
+/* BORDER STYLING */
+#ngai {
+    position: relative;
+    z-index: 2;
+}
+
+#borderimg {
+    border: 1px solid red;
+    position:absolute;
+    z-index:4;
+    width:102%;
+    height:100%;
+    /* top: 351%; */
+    background: transparent;
+    margin-left: -1%;
+    margin-right: -1%;
+    
+}
+
+.site-footer {
+    position:relative;
+    z-index:1;}
 
 
 /* TOGGLE NAV */
@@ -606,12 +692,12 @@ form input[type="submit"] {
     margin-bottom: 1em;
 }
 
-.section-title::after {
+/* .section-title::after {
     content: "";
     display: block;
     width: 100px;
     margin: 0.5em auto;
-}
+} THIS CODE ADDS THE LITTLE UNDERLINE BENEATH A SECTION TITLE*/
 
 
 /* OFFSET MAIN by adding padding above main so that the header doesn't cover it up*/
@@ -624,10 +710,6 @@ form input[type="submit"] {
     margin-top: 2em;
 }
 
-/* SECTION FORMATTING */
-#purpose, #roots, #ngai {
-    background-color: #223228;
-}
 
 
 /* VERTICAL MEDIA QUERY add height/padding to bottom of contact section only for large screens. Now when we click contact, we're directed to the top of the contact section even on large screens, rather than showing contact as halfway down the screen - credit to Romina */
@@ -637,71 +719,6 @@ form input[type="submit"] {
         padding-bottom: 20em;
     }
 }
-
-    
-
-/* PURPOSE SECTION STYLING */
-#purpose p {
-    max-width: 20em;
-}
-
-#purpose img {
-    transform: rotate(-15deg);
-    transform-origin: 50% 60% 0;
-    padding-top: 3em;
-}
-
-@media (max-width: 768px) {
-    #purpose p {
-        max-width: 100%;
-    }
-}
-
-
-
-/* ROOTS SECTION STYLING */
-.site-main {
-    overflow-x: hidden;
-}
-
-@media (min-width: 1050px) {
-    #roots .map {
-        margin-top: -15%;
-        scale: 1.05;
-        transform-origin: left center;
-    }
-}
-
-@media (min-width: 1400px) {
-    #roots .map {
-        scale: 1.15;
-    }
-}
-
-/* BORDER STYLING */
-#ngai {
-    position: relative;
-    z-index: 2;
-}
-
-#taroborder {
-    border: 1px solid red;
-    position:absolute;
-    z-index:4;
-    width:102%;
-    height:100%;
-    /* top: 351%; */
-    background: transparent;
-    margin-left: -1%;
-    margin-right: -1%;
-    
-}
-
-.site-footer {
-    position:relative;
-    z-index:1;}
-
-
 
 
 /*FOR WEB DEV TESTING ONLY */
