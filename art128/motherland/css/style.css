@@ -98,6 +98,7 @@ blockquote {
     font-weight: 400;
     font-style: normal;
     font-size: 1.2em;
+    color: rgb(209, 211, 212);
 }
 
 /* LINKS */
@@ -112,6 +113,11 @@ a:hover {
 }
 
 /* HELPER CLASSES */
+
+.green {
+    background-color: #223228;
+}
+
 /* .text-centered {
     text-align: center;
 }
@@ -415,7 +421,6 @@ footer .site-nav ul {
 /* SECTIONS */
 section {
     padding: 3em 0;
-    border: 2px solid red;
 }
 
 /* HERO */
@@ -466,9 +471,6 @@ section {
 }
 
 /* SECTION STYLING */
-.green {
-    background-color: #223228;
-}
 
 /* PURPOSE SECTION STYLING */
 #purpose p {
@@ -487,11 +489,74 @@ section {
     }
 }
 
+@media (min-width: 767px) {
+   #purpose {
+    background-image: url(../img/bamboo2.svg);
+    background-size:contain; 
+    background-repeat: no-repeat;
+    background-position: left;
+    min-height: 200px;
+    }
+}
+
 
 /* ROOTS SECTION STYLING */
 .site-main {
     overflow-x: hidden;
 }
+
+#roots .chop img {
+    display: block;
+}
+
+.chop {
+    position: relative;
+}
+
+.chop .chopstick1 {
+    position: absolute;
+    left: 6%;
+    top: 2%;
+    transform: rotate(20deg);
+    transform-origin: left bottom;
+    white-space: nowrap;
+}
+
+.chop .chopstick2 {
+    position: absolute;
+    top: 75%;
+    left: 8%;
+    transform: rotate(-5deg);
+    transform-origin: left top;
+    max-width: 20em;
+}
+
+/* CHOP DIV BETWEEN 768px AND 1400px */
+@media (max-width: 1400px) and (min-width: 768px) {
+    .chop {
+        text-align: center;
+    }
+    .chop img {
+        padding-top: 10%;
+        padding-bottom: 13%;
+        position: relative;
+        /* scale: 1.5; */
+    }
+    .chop .chopstick1 {
+        left: 0%;
+        top: 5%;
+        transform: rotate(0deg);
+        white-space: wrap;
+        position: absolute;
+    }
+    .chop .chopstick2 {
+        left: 0%;
+        top: 75%;
+        transform: rotate(0deg);
+        position: absolute;
+    }
+}
+
 
 @media (min-width: 1050px) {
     #roots .map {
@@ -499,49 +564,43 @@ section {
         scale: 1.05;
         transform-origin: left center;
     }
-
-    #roots .chop {
-        scale: 2;
-        transform-origin: center;
-    }
 }
 
 @media (min-width: 1400px) {
     #roots .map {
         scale: 1.15;
     }
+    .chop {
+        position: absolute;
+    }
+    .chop .chopstick1 {
+        top: 13%;
+    }
+    .chop img {
+        margin-left: -12%;
+        scale: 1.2;
+    }
 }
 
-#roots .chop {
-    transform: rotate(-90deg);
-    /* transform-origin: 50% 60% 0; */
-    margin-top: -70%;
-}
 
 /* NGAI SECTION STYLING */
 
-/* BORDER STYLING */
-#ngai {
-    position: relative;
-    z-index: 2;
-}
-
-#borderimg {
-    border: 1px solid red;
-    position:absolute;
-    z-index:4;
-    width:102%;
-    height:100%;
-    /* top: 351%; */
-    background: transparent;
-    margin-left: -1%;
-    margin-right: -1%;
-    
-}
-
+/* FOOTER STYLING */
 .site-footer {
-    position:relative;
-    z-index:1;}
+    position: relative;
+}
+.site-footer::before {
+    background-image: url(../img/taro-wide.svg);
+    background-size: contain;
+    content: '';
+    height: 200px;
+    width: 1000px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -55%);
+    background-repeat: no-repeat;
+}
 
 
 /* TOGGLE NAV */
@@ -726,4 +785,26 @@ form input[type="submit"] {
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.5);
+} */
+
+
+/* 
+#roots .container {
+    border: 1px solid purple;
+}
+
+#roots .row {
+    border: 1px solid blue;
+}
+
+#roots .column.four-twelfths {
+    border: 1px solid red;
+}
+
+#roots .map {
+    border: 1px solid gray;
+}
+
+#roots .chop {
+    border: 1px solid green;
 } */
