@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // CLOSE THE MENU NAV WHEN A STICKY NAV LINK IS CLOSED
-    const fixednavlinks= document.querySelectorAll('.fixed nav a'); 
+    const fixednavlinks= document.querySelectorAll('.site-nav a'); 
     fixednavlinks.forEach(function(el) {
         el.onclick = function() {
         menunav.setAttribute("data-navstate", "closed");

@@ -66,6 +66,7 @@ h2 {
     font-family: "utopia-std", serif;
     font-weight: 600;
     font-style: normal;
+    color: #dbb818;
 }
 h3 {
     font-size: 1.5em; /* 24px */
@@ -87,9 +88,10 @@ h6 {
 /* PARAGRAPHS */
 p {
     margin: .5em 0;
-    max-width: 38em;
+    max-width: 100%;
     text-wrap: pretty;
 }
+/* I changed max-width from 38em to see if 100% wide allows the blockquote to center in teh ngai section */
 
 /* BLOCKQUOTES */
 
@@ -97,7 +99,7 @@ blockquote {
     font-family: "marydale", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: rgb(209, 211, 212);
 }
 
@@ -117,43 +119,6 @@ a:hover {
 .green {
     background-color: #223228;
 }
-
-/* .text-centered {
-    text-align: center;
-}
-
-.hidden {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-}
-
-@media (min-width: 768px) {
-    .hidden-desktop {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
-}
-
-@media (max-width: 767px) {
-    .hidden-mobile {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
-}
-
-.full-width {
-    max-width: none;
-    width: 100%
-}
-
-.horiz-center {
-    margin-left: auto;
-    margin-right: auto;
-} */
-
 
 /* IMAGES */
 img {
@@ -258,6 +223,10 @@ body {
         margin-right: -2%;
     }
 
+    .row.swappit {
+        flex-direction: row-reverse;
+    }
+
     .row > .column {
         flex-grow: 1;
         margin-left: 2%;
@@ -317,9 +286,9 @@ body {
         margin-left: calc(8.3333% - (var(--gridgap) / 2) + var(--gridgap));
       }
 
-    .row > .push-two-twelfths {
+    /* .row > .push-two-twelfths {
         margin-left: calc(16.6667% - (var(--gridgap) / 2) + var(--gridgap));
-    }
+    } */
 }
 
 /* FOR DEMO PURPOSES ONLY */
@@ -365,8 +334,11 @@ header {
 }
 
 /* SITE FOOTER */
+
 .site-footer {
     background: #dbb818;
+    padding-top: 7em;
+    position: relative;
 }
 
 .site-footer a {
@@ -382,18 +354,33 @@ footer .site-nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    display: flex;
-    justify-content: center;
+    display: block;
+}
+/*here*/
+
+.site-footer::before {
+    background-image: url('../img/taro-wide.svg');
+    background-size: 100%;
+    content: '';
+    width: 100%;
+    aspect-ratio: 716 / 129;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(0, -59.5%);
+    background-repeat: no-repeat;
 }
 
-
+.site-footer .container {
+    display: flex;
+    justify-content: space-between;
+}
 
 /* ON LARGER SCREENS PLACE LOGO LEFT AND NAV RIGHT */
 @media (min-width: 768px) {
-    .site-header .container {
+    .site-header {
         display: flex;
         justify-content: space-between;
-        /* align-items: center; */
     }
 }
 
@@ -408,7 +395,7 @@ footer .site-nav ul {
 }
 
 .site-nav a {
-    display: block; /* CHANGING TO BLOCK CHANGES THE A TAG FROM INLINE TO BLOCK, WHICH ENABLES PADDING TOP AND BOTTOM */
+    display: inline-block; 
     padding: 1em;
 }
 
@@ -462,6 +449,7 @@ section {
     font-weight: 400;
     font-style: normal;
     font-size: clamp(2em, 4vw, 3em);
+    color: white;
 }
 
 
@@ -491,11 +479,14 @@ section {
 
 @media (min-width: 767px) {
    #purpose {
-    background-image: url(../img/bamboo2.svg);
+    background-image: url('../img/bamboo-clockwiserotate.svg');
     background-size:contain; 
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: -19%;
     min-height: 200px;
+    }
+    #purpose img {
+        padding-bottom: 0;
     }
 }
 
@@ -532,7 +523,7 @@ section {
 }
 
 /* CHOP DIV BETWEEN 768px AND 1400px */
-@media (max-width: 1400px) and (min-width: 768px) {
+@media (max-width: 1050px) and (min-width: 768px) {
     .chop {
         text-align: center;
     }
@@ -540,7 +531,6 @@ section {
         padding-top: 10%;
         padding-bottom: 13%;
         position: relative;
-        /* scale: 1.5; */
     }
     .chop .chopstick1 {
         left: 0%;
@@ -564,20 +554,23 @@ section {
         scale: 1.05;
         transform-origin: left center;
     }
-}
-
-@media (min-width: 1400px) {
-    #roots .map {
-        scale: 1.15;
-    }
     .chop {
         position: absolute;
+        margin-top: -3%;
     }
     .chop .chopstick1 {
         top: 13%;
     }
     .chop img {
         margin-left: -12%;
+    }
+}
+
+@media (min-width: 1400px) {
+    #roots .map {
+        scale: 1.15;
+    }
+    .chop img {
         scale: 1.2;
     }
 }
@@ -585,28 +578,31 @@ section {
 
 /* NGAI SECTION STYLING */
 
-/* FOOTER STYLING */
-.site-footer {
-    position: relative;
+#ngai img {
+    transform: rotate(15deg);
+    transform-origin: 50% 60% 0;
+    padding-top: 4em;
 }
-.site-footer::before {
-    background-image: url(../img/taro-wide.svg);
-    background-size: contain;
-    content: '';
-    height: 200px;
-    width: 1000px;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, -55%);
-    background-repeat: no-repeat;
+
+#ngai blockquote {
+    text-align: center;
+}
+
+@media (min-width: 1400px) {
+    #ngai img {
+        padding-top: 0;
+    }
+}
+
+#ngai {
+    padding-bottom: 10em;
 }
 
 
 /* TOGGLE NAV */
 @media (max-width: 767px) {
     .toggle-nav .site-id {
-        position: absolute;
+        position: relative;
         padding: .3em 0 0 0;
     }
     .toggle-nav .site-nav {
@@ -625,11 +621,28 @@ section {
     }
     .toggle-nav .site-nav ul {
         display: block;
-        text-align: left;
+        text-align: right;
+    }
+    .toggle-nav .site-nav a {
+        text-decoration: none;
+        position: relative;
+    }
+    .toggle-nav .site-nav a::after {
+        transition: .6s;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: #dbb818;
+        left: 0%;
+        bottom: 20%;
+        transform: scaleX(0);
+    }
+    .toggle-nav .site-nav a:hover::after {
+        transform: scaleX(100%);
     }
     .toggle-nav .site-nav a:hover {
-        background-color: rgba(0 0 153/1);
-        color: white;
+        color: #dbb818;
     }
     .toggle-nav[data-navstate="closed"] ul {
         height: 0;
@@ -644,7 +657,7 @@ section {
     .toggle-nav .site-nav .menu-button.navicon {
         border: none;
         color: rgba(255 255 255/0);
-        padding: 0;
+        /* padding: 0; */
     }
     .toggle-nav .site-nav .menu-button.navicon::after {
         box-sizing: border-box;
@@ -652,7 +665,7 @@ section {
         display: inline-block;
         padding: 0 0 0 .5em;
         margin: 0;
-        color: rgba(0 0 0/.8);
+        color: rgba(255 255 255 / 1);
         font-size: 1.5em;
     }
 
@@ -751,24 +764,6 @@ form input[type="submit"] {
     margin-bottom: 1em;
 }
 
-/* .section-title::after {
-    content: "";
-    display: block;
-    width: 100px;
-    margin: 0.5em auto;
-} THIS CODE ADDS THE LITTLE UNDERLINE BENEATH A SECTION TITLE*/
-
-
-/* OFFSET MAIN by adding padding above main so that the header doesn't cover it up*/
-.site-header.fixed + main { 
-    padding-top: 4.5em;
-}
-
-/* OFFSET SECTIONS about and contact WHEN HEADER IS FIXED */
-.fixed + .site-main .section-title {
-    margin-top: 2em;
-}
-
 
 
 /* VERTICAL MEDIA QUERY add height/padding to bottom of contact section only for large screens. Now when we click contact, we're directed to the top of the contact section even on large screens, rather than showing contact as halfway down the screen - credit to Romina */
@@ -785,26 +780,4 @@ form input[type="submit"] {
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.5);
-} */
-
-
-/* 
-#roots .container {
-    border: 1px solid purple;
-}
-
-#roots .row {
-    border: 1px solid blue;
-}
-
-#roots .column.four-twelfths {
-    border: 1px solid red;
-}
-
-#roots .map {
-    border: 1px solid gray;
-}
-
-#roots .chop {
-    border: 1px solid green;
 } */
