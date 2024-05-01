@@ -341,6 +341,10 @@ header {
     position: relative;
 }
 
+.site-footer .container {
+    text-align: center;
+}
+
 .site-footer a {
     color: rgba(0 0 0/.8);
 }
@@ -371,9 +375,11 @@ footer .site-nav ul {
     background-repeat: no-repeat;
 }
 
-.site-footer .container {
-    display: flex;
-    justify-content: space-between;
+@media (min-width: 768px) {
+    .site-footer .container {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 /* ON LARGER SCREENS PLACE LOGO LEFT AND NAV RIGHT */
