@@ -106,7 +106,7 @@ blockquote {
 
 /* LINKS */
 a {
-    color: rgba(0 0 153 0.8);
+    color: rgba(0 0 153 / 0.8);
     text-decoration: none;
 }
 
@@ -147,7 +147,7 @@ form input[type="submit"] {
 button:hover,
 form input[type="submit"]:hover {
     background-color: #223228;
-    border-color: rgba #223228;
+    border-color: #223228;
     color: #dbb818;
     text-decoration: none;
 }
