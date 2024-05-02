@@ -43,6 +43,7 @@ body {
     font-family: franklin-gothic-atf, sans-serif;
     font-weight: 100;
     font-style: normal;
+  
 }
 
 /* HEADINGS */
@@ -132,9 +133,9 @@ button,
 form input[type="submit"] {
     font-size: inherit;
     line-height: 1;
-    background-color: rgba(0 0 255 / 1);
-    border: 1px solid rgba(0 0 255 / 1);
-    color: rgba(255 255 255 / 1);
+    background-color: #bcbec0;
+    border: 1px solid #bcbec0;
+    color: #223228;
     padding: 1em;
     display: inline-block;
     margin: .5em .5em .5em 0;
@@ -145,9 +146,9 @@ form input[type="submit"] {
 .button:hover,
 button:hover,
 form input[type="submit"]:hover {
-    background-color: rgba(0 0 153 / 1);
-    border-color: rgba (0 0 153 / 1);
-    color: rgba(255 255 255 / 1);
+    background-color: #223228;
+    border-color: rgba #223228;
+    color: #dbb818;
     text-decoration: none;
 }
 
@@ -310,6 +311,10 @@ body {
     align-items: baseline;
 }
 
+.site-header {
+    font-weight: 500;
+}
+
 header {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -337,22 +342,48 @@ header {
 
 .site-footer {
     background: #dbb818;
-    padding-top: 7em;
+    padding-top: 7.5em;
     position: relative;
+    color: #223228;
+    font-size: 85%;
 }
 
 .site-footer .container {
-    text-align: center;
+        text-align: center;
 }
 
 .site-footer a {
     color: rgba(0 0 0/.8);
 }
 
-.site-footer a:hover {
-    color: rgba(0 0 0/1);
+
+.site-footer .site-nav a {
     text-decoration: none;
+    position: relative;
 }
+
+.site-footer .site-nav a::after {
+    transition: .6s;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: rgba(255 255 255 / 1);
+    left: 0%;
+    bottom: 20%;
+    transform: scaleX(0);
+}
+.site-footer .site-nav a:hover::after {
+    transform: scaleX(100%);
+}
+.site-footer .site-nav a:hover {
+    color: rgba(255 255 255 / 1);
+}
+
+
+
+
+
 
 footer .site-nav ul {
     margin: 0;
@@ -360,7 +391,6 @@ footer .site-nav ul {
     list-style: none;
     display: block;
 }
-/*here*/
 
 .site-footer::before {
     background-image: url('../img/taro-wide.svg');
@@ -377,10 +407,12 @@ footer .site-nav ul {
 
 @media (min-width: 768px) {
     .site-footer .container {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr;
+        text-align: left;
     }
 }
+
 
 /* ON LARGER SCREENS PLACE LOGO LEFT AND NAV RIGHT */
 @media (min-width: 768px) {
@@ -391,6 +423,28 @@ footer .site-nav ul {
 }
 
 /* SITE NAV */
+.site-nav a {
+    text-decoration: none;
+    position: relative;
+}
+
+.site-nav a::after {
+    transition: .6s;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #dbb818;
+    left: 0%;
+    bottom: 20%;
+    transform: scaleX(0);
+}
+.site-nav a:hover::after {
+    transform: scaleX(100%);
+}
+.site-nav a:hover {
+    color: #dbb818;
+}
 
 .site-nav ul {
     margin: 0;
@@ -725,12 +779,16 @@ section {
 
 /* FORMS */
 
+#contact {
+    padding: 0;
+}
+
 form {
     max-width: 600px;
     margin: 2em auto;
 }
 
-form label,
+/* form label, */
 form input,
 form textarea {
     box-sizing: border-box;
@@ -738,22 +796,24 @@ form textarea {
     width: 100%;
     font-size: 1em;
     font-family: helvetica, arial, sans-serif;
-}
-
-form label {
     margin-top: 1em;
     margin-bottom: .25em;
 }
+
+/* form label {
+    margin-top: 1em;
+    margin-bottom: .25em;
+} */
 
 form input[type="text"],
 form textarea {
     border: 1px solid #ccc;
     padding: .5em;
-    color: #480897;
+    color: #223228;
 }
 
 form textarea {
-    min-height: 10em;
+    min-height: 7em;
     line-height: 1.5;
 }
 
@@ -770,16 +830,17 @@ form input[type="submit"] {
     margin-bottom: 1em;
 }
 
-
-
-/* VERTICAL MEDIA QUERY add height/padding to bottom of contact section only for large screens. Now when we click contact, we're directed to the top of the contact section even on large screens, rather than showing contact as halfway down the screen - credit to Romina */
-
-@media (min-height: 630px) {
-    #contact {
-        padding-bottom: 20em;
+@media (max-width: 767px) {
+.site-footer .section-title {
+    text-align: center;
     }
 }
 
+@media (min-width: 768px) {
+.site-footer h3 {
+    margin-top: 0;    
+    }
+}
 
 /*FOR WEB DEV TESTING ONLY */
 /* body * {
@@ -787,3 +848,4 @@ form input[type="submit"] {
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.5);
 } */
+
