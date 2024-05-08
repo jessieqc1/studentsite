@@ -81,12 +81,12 @@ p {
 
 /* LINKS */
 a {
-    color: rgba(0 0 153 0.8);
+    color: rgba(0, 0, 153, 0.8);
     text-decoration: none;
 }
 
 a:hover {
-    color: rgba(0 0 153 / 1);
+    color: rgba(0, 0, 153, 1);
     text-decoration: underline;
 }
 
@@ -139,9 +139,9 @@ button,
 form input[type="submit"] {
     font-size: inherit;
     line-height: 1;
-    background-color: rgba(0 0 255 / 1);
-    border: 1px solid rgba(0 0 255 / 1);
-    color: rgba(255 255 255 / 1);
+    background-color: rgba(0, 0, 255, 1);
+    border: 1px solid rgba(0, 0, 255, 1);
+    color: rgba(255, 255, 255, 1);
     padding: 1em;
     display: inline-block;
     margin: .5em .5em .5em 0;
@@ -152,20 +152,20 @@ form input[type="submit"] {
 .button:hover,
 button:hover,
 form input[type="submit"]:hover {
-    background-color: rgba(0 0 153 / 1);
-    border-color: rgba (0 0 153 / 1);
-    color: rgba(255 255 255 / 1);
+    background-color: rgba(0, 0, 153, 1);
+    border-color: rgba(0, 0, 153, 1);
+    color: rgba(255, 255, 255, 1);
     text-decoration: none;
 }
 
 .button.alt {
     background-color: transparent;
-    color: rgba(0 0 153 / 1);
+    color: rgba(0, 0, 153, 1);
 }
 
 .button.alt:hover {
-    background-color: rgba(0 0 153 / 1);
-    color: rgba(255 255 255 / 1);
+    background-color: rgba(0, 0, 153, 1);
+    color: rgba(255, 255, 255, 1);
 }
 
 /* ADDING A LINE OF CODE HERE SO THE SUBMIT BUTTON HAS A POINTER WHEN HOVERING */
@@ -258,10 +258,9 @@ body.demo::before {
 }
 
 @media (min-width: 768px) {
-
     .row {
         display: flex;
-        justify-content: space-evenly
+        justify-content: space-evenly;
         margin-left: -2%;
         margin-right: -2%;
     }
@@ -331,12 +330,12 @@ body.demo::before {
 /* STYLING FOR BOTH HEADER AND FOOTER */
 .site-header a,
 .site-footer a {
-    color: rgba(0 0 0/.8);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .site-header a:hover 
 .site-footer a:hover {
-    color: rgba(0 0 0/1);
+    color: rgba(0, 0, 0, 1);
     text-decoration: none;
 }
 
@@ -378,7 +377,7 @@ section {
 .hero {
     padding: 6em 4%;
     background-image: url('../img/waterbuffalo.jpg');
-    /* background-color: rgba(0 0 0 /.1); */
+    /* background-color: rgba(0, 0, 0, 0.1); */
     text-align: left;
     min-height: 100vh;
 }
@@ -411,14 +410,14 @@ section {
         border: 1px solid black;
     }
     .toggle-nav .site-nav .menu-button::selection {
-        background-color: rgba(255 255 255/0);
+        background-color: rgba(255, 255, 255, 0);
     }
     .toggle-nav .site-nav ul {
         display: block;
         text-align: left;
     }
     .toggle-nav .site-nav a:hover {
-        background-color: rgba(0 0 153/1);
+        background-color: rgba(0, 0, 153, 1);
         color: white;
     }
     .toggle-nav[data-navstate="closed"] ul {
@@ -433,7 +432,7 @@ section {
     /* NAVICON */
     .toggle-nav .site-nav .menu-button.navicon {
         border: none;
-        color: rgba(255 255 255/0);
+        color: rgba(255, 255, 255, 0);
         padding: 0;
     }
     .toggle-nav .site-nav .menu-button.navicon::after {
@@ -442,7 +441,7 @@ section {
         display: inline-block;
         padding: 0 0 0 .5em;
         margin: 0;
-        color: rgba(0 0 0/.8);
+        color: rgba(0, 0, 0, 0.8);
         font-size: 1.5em;
     }
 
@@ -592,7 +591,7 @@ form input[type="submit"] {
     display: block;
     width: 100px;
     margin: 0.5em auto;
-    /* border-bottom: 3px solid rgba(0 0 0/.2); */
+    /* border-bottom: 3px solid rgba(0, 0, 0, 0.2); */
 }
 
 /* FIXED HEADER */

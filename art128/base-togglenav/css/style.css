@@ -34,7 +34,7 @@ body {
     font-size: 87.5%; /* 14px */
     font-family: Helvetica, Arial, sans-serif;
     line-height: 1.4;
-    color: rgba(0 0 0 / .8)
+    color: rgba(0, 0, 0, 0.8)
 }
 
 /* HEADINGS */
@@ -81,12 +81,12 @@ p {
 
 /* LINKS */
 a {
-    color: rgba(0 0 153 0.8);
+    color: rgba(0, 0, 153, 0.8);
     text-decoration: none;
 }
 
 a:hover {
-    color: rgba(0 0 153 / 1);
+    color: rgba(0, 0, 153, 1);
     text-decoration: underline;
 }
 
@@ -116,9 +116,9 @@ img {
 button {
     font-size: inherit;
     line-height: 1;
-    background-color: rgba(0 0 255 / 1);
-    border: 1px solid rgba(0 0 255 / 1);
-    color: rgba(255 255 255 / 1);
+    background-color: rgba(0, 0, 255, 1);
+    border: 1px solid rgba(0, 0, 255, 1);
+    color: rgba(255, 255, 255, 1);
     padding: 1em;
     display: inline-block;
     margin: .5em .5em .5em 0;
@@ -128,20 +128,20 @@ button {
 
 .button:hover,
 button:hover {
-    background-color: rgba(0 0 153 / 1);
-    border-color: rgba (0 0 153 / 1);
-    color: rgba(255 255 255 / 1);
+    background-color: rgba(0, 0, 153, 1);
+    border-color: rgba(0, 0, 153, 1);
+    color: rgba(255, 255, 255, 1);
     text-decoration: none;
 }
 
 .button.alt {
     background-color: transparent;
-    color: rgba(0 0 153 / 1);
+    color: rgba(0, 0, 153, 1);
 }
 
 .button.alt:hover {
-    background-color: rgba(0 0 153 / 1);
-    color: rgba(255 255 255 / 1);
+    background-color: rgba(0, 0, 153, 1);
+    color: rgba(255, 255, 255, 1);
 }
 
 /* LAYOUT */
@@ -267,7 +267,7 @@ body.demo::before {
 
 /* FOR DEMO PURPOSES ONLY */
 .demo .column{
-    background: rgba(0 0 0 /.2);
+    background: rgba(0, 0, 0, 0.2);
     padding: .5em;
     text-align: center;
 }
@@ -291,12 +291,12 @@ body.demo::before {
 /* STYLING FOR BOTH HEADER AND FOOTER */
 .site-header a,
 .site-footer a {
-    color: rgba(0 0 0/.8);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .site-header a:hover 
 .site-footer a:hover {
-    color: rgba(0 0 0/1);
+    color: rgba(0, 0, 0, 1);
     text-decoration: none;
 }
 
@@ -337,7 +337,7 @@ section {
 /* HERO */
 .hero {
     padding: 6em 4%;
-    background-color: rgba(0 0 0 /.1);
+    background-color: rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -365,14 +365,14 @@ section {
         border: 1px solid black;
     }
     .toggle-nav .site-nav .menu-button::selection {
-        background-color: rgba(255 255 255/0);
+        background-color: rgba(255, 255, 255, 0);
     }
     .toggle-nav .site-nav ul {
         display: block;
         text-align: center;
     }
     .toggle-nav .site-nav a:hover {
-        background-color: rgba(0 0 153/1);
+        background-color: rgba(0, 0, 153, 1);
         color: white;
     }
     .toggle-nav[data-navstate="closed"] ul {
@@ -387,7 +387,7 @@ section {
     /* NAVICON */
     .toggle-nav .site-nav .menu-button.navicon {
         border: none;
-        color: rgba(255 255 255/0);
+        color: rgba(255, 255, 255, 0);
         padding: 0;
     }
     .toggle-nav .site-nav .menu-button.navicon::after {
@@ -396,7 +396,7 @@ section {
         display: inline-block;
         padding: 0 0 0 .5em;
         margin: 0;
-        color: rgba(0 0 0/.8);
+        color: rgba(0, 0, 0, 0.8);
         font-size: 1.5em;
     }
 

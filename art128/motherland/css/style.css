@@ -106,12 +106,12 @@ blockquote {
 
 /* LINKS */
 a {
-    color: rgba(0 0 153 / 0.8);
+    color: rgba(0, 0, 153, 0.8);
     text-decoration: none;
 }
 
 a:hover {
-    color: rgba(0 0 153 / 1);
+    color: rgba(0, 0, 153, 1);
     text-decoration: underline;
 }
 
@@ -154,12 +154,12 @@ form input[type="submit"]:hover {
 
 .button.alt {
     background-color: transparent;
-    color: rgba(0 0 153 / 1);
+    color: rgba(0, 0, 153, 1);
 }
 
 .button.alt:hover {
-    background-color: rgba(0 0 153 / 1);
-    color: rgba(255 255 255 / 1);
+    background-color: rgba(0, 0, 153, 1);
+    color: rgba(255, 255, 255, 1);
 }
 
 /* ADDING A LINE OF CODE HERE SO THE SUBMIT BUTTON HAS A POINTER WHEN HOVERING */
@@ -322,11 +322,11 @@ header {
 }
 
 .site-header a {
-    color: rgba(255 255 255/1);
+    color: rgba(255, 255, 255, 1);
 }
 
 .site-header a:hover {
-    color: rgba(255 255 255/1);
+    color: rgba(255, 255, 255, 1);
     text-decoration: none;
 }
 
@@ -353,7 +353,7 @@ header {
 }
 
 .site-footer a {
-    color: rgba(0 0 0/.8);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 
@@ -368,7 +368,7 @@ header {
     position: absolute;
     width: 100%;
     height: 2px;
-    background: rgba(255 255 255 / 1);
+    background: rgba(255, 255, 255, 1);
     left: 0%;
     bottom: 20%;
     transform: scaleX(0);
@@ -377,7 +377,7 @@ header {
     transform: scaleX(100%);
 }
 .site-footer .site-nav a:hover {
-    color: rgba(255 255 255 / 1);
+    color: rgba(255, 255, 255, 1);
 }
 
 
@@ -458,7 +458,7 @@ footer .site-nav ul {
     display: inline-block; 
     padding: 1em;
 }
-
+/*line 459 is the reason I have an indent in my footer nav item list. I need to write code specifically for the footer nav "Learn More" list items to remove the 1em padding all around */
 .site-nav .menu-button {
     display: none;
     border: none; 
@@ -481,9 +481,9 @@ section {
         url('../img/waterbuffalo-dark.jpg');
     background-size: cover;
     background-position: 0% 80%;
-    /* background-color: rgba(0 0 0 /.1); */
+    /* background-color: rgba(0, 0, 0, 0.1); */
     text-align: left;
-    min-height: 100svh;
+    min-height: 85svh;
 }
 
 .hero h1 {
@@ -678,7 +678,7 @@ section {
         border: 1px solid black;
     }
     .toggle-nav .site-nav .menu-button::selection {
-        background-color: rgba(255 255 255/0);
+        background-color: rgba(255, 255, 255, 0);
     }
     .toggle-nav .site-nav ul {
         display: block;
@@ -717,7 +717,7 @@ section {
     /* NAVICON */
     .toggle-nav .site-nav .menu-button.navicon {
         border: none;
-        color: rgba(255 255 255/0);
+        color: rgba(255, 255, 255, 0);
         /* padding: 0; */
     }
     .toggle-nav .site-nav .menu-button.navicon::after {
@@ -726,7 +726,7 @@ section {
         display: inline-block;
         padding: 0 0 0 .5em;
         margin: 0;
-        color: rgba(255 255 255 / 1);
+        color: rgba(255, 255, 255, 1);
         font-size: 1.5em;
     }
 
