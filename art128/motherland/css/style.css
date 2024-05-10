@@ -25,9 +25,9 @@
             #FOOTER
             #SECTIONS
                 #HERO
-                #PUROSE
-                #ROOTS
-                #NGAI
+                #HERITAGE
+                #GEOGRAPHY
+                #LANGUAGE
         #SITE NAVIGATION
             #TOGGLE-NAV (Default for Small Screens)
         #FORMS
@@ -92,7 +92,7 @@ p {
     max-width: 100%;
     text-wrap: pretty;
 }
-/* I changed max-width from 38em to see if 100% wide allows the blockquote to center in teh ngai section */
+/* I changed max-width from 38em to see if 100% wide allows the blockquote to center in the language section */
 
 /* BLOCKQUOTES */
 
@@ -483,14 +483,14 @@ section {
     background-image: 
     linear-gradient(
         10deg,
-        rgba(0, 0, 0, 0.25),
-        rgb(0, 0, 0, .2)), 
+        rgba(0, 0, 0, 0.35),
+        rgb(0, 0, 0, 0.3)), 
         url('../img/waterbuffalo-dark.jpg');
     background-size: cover;
     background-position: 0% 80%;
     /* background-color: rgba(0, 0, 0, 0.1); */
     text-align: left;
-    min-height: 85svh;
+    min-height: 90svh;
 }
 
 .hero h1 {
@@ -512,7 +512,8 @@ section {
 }
 
 .hero h2 {
-    padding-top: .5em;
+    padding: 0.25em 0 0.75em 0;
+    margin: 0;
     font-family: "marydale", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -520,51 +521,62 @@ section {
     color: white;
 }
 
+.hero p {
+    max-width: 27em;
+    text-wrap: pretty;
+}
+
 
 .hero > .container {
-    padding-top: 10em;
-    padding-left: 8%
+    padding-top: 8em;
+}
+
+@media (min-width: 768px) {
+    .hero > .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 /* SECTION STYLING */
 
-/* PURPOSE SECTION STYLING */
-#purpose p {
+/* HERITAGE SECTION STYLING */
+#heritage p {
     max-width: 20em;
 }
 
-#purpose img {
+#heritage img {
     transform: rotate(-15deg);
     transform-origin: 50% 60% 0;
     padding-top: 3em;
 }
 
 @media (max-width: 768px) {
-    #purpose p {
+    #heritage p {
         max-width: 100%;
     }
 }
 
 @media (min-width: 767px) {
-   #purpose {
+   #heritage {
     background-image: url('../img/bamboo-clockwiserotate.svg');
     background-size:contain; 
     background-repeat: no-repeat;
     background-position: -19%;
     min-height: 200px;
     }
-    #purpose img {
+    #heritage img {
         padding-bottom: 0;
     }
 }
 
 
-/* ROOTS SECTION STYLING */
+/* GEOGRAPHY SECTION STYLING */
 .site-main {
     overflow-x: hidden;
 }
 
-#roots .chop img {
+#geography .chop img {
     display: block;
 }
 
@@ -617,7 +629,7 @@ section {
 
 
 @media (min-width: 1050px) {
-    #roots .map {
+    #geography .map {
         margin-top: -15%;
         scale: 1.05;
         transform-origin: left center;
@@ -635,7 +647,7 @@ section {
 }
 
 @media (min-width: 1400px) {
-    #roots .map {
+    #geography .map {
         scale: 1.15;
     }
     .chop img {
@@ -644,25 +656,25 @@ section {
 }
 
 
-/* NGAI SECTION STYLING */
+/* LANGUAGE SECTION STYLING */
 
-#ngai img {
+#language img {
     transform: rotate(15deg);
     transform-origin: 50% 60% 0;
     padding-top: 4em;
 }
 
-#ngai blockquote {
+#language blockquote {
     text-align: center;
 }
 
 @media (min-width: 1400px) {
-    #ngai img {
+    #language img {
         padding-top: 0;
     }
 }
 
-#ngai {
+#language {
     padding-bottom: 10em;
 }
 
