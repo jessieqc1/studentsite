@@ -1,0 +1,1393 @@
+/* ----------------------------
+-------------------------------
+-------------------------------
+
+CSS TABLE OF CONTENTS
+
+# GLOBAL STYLES 46
+    # GLOBAL VARIABLES
+    # GLOBAL COLORS
+    # GLOBAL RESET
+    # GLOBAL TYPOGRAPHY
+    # GLOBAL MEDIA
+    # GLOBAL HELPERS
+
+#LAYOUT 260
+    # MEDIA QUERIES / BREAKPOINTS
+    # CONTAINER
+    # GRID
+
+# SITE STRUCTURE 373
+    # HEADER
+        # LOGO
+        # SITE NAV
+            # TOGGLE MENU
+        # SITE-HEADER-ON-TOP-OF-HERO
+    # MAIN
+        # SECTIONS
+            # HERO
+    #FOOTER
+
+# UI COMPONENTS 
+    # BUTTONS
+    # CARDS 
+    # TIMELINE
+
+# ANIMATION 
+    # SMOOTH SCROLLING
+    # SCROLL TRIGGERED ANIMATION OBSERVE ME
+    # SCROLL TRIGGERED ANIMATION EXPAND
+
+#CUSTOM STYLING 
+    # PHOTO BLOCK
+    # PARALLAX
+        # PARALLAX CUSTOM SECTIONS
+    # HEROS CUSTOM PAGES
+    # TIMELINE FOOTNOTE TEXT    
+    # LOCATION PAGE
+        # DISPLAY DRIVING DIRECTIONS SVGS AS BLOCK
+
+
+
+-------------------------------------
+-------------------------------------
+-------------------------------------
+
+/* ---------------------- */
+/* ------- GLOBALS ------ */
+/* ---------------------- */
+
+/* GLOBAL VARIABLES */
+
+:root {
+
+    /* DEFINE ALL COMMONLY USED COLORS HERE */
+    --color-body-background: rgb(255 255 255);
+    --color-text-body: rgba(0 0 0 / 0.8);
+    --color-text-headings: rgb(0, 57, 90);
+
+    --color-links: rgb(250, 114, 104);
+    --color-links-hover: rgb(29, 172, 214);
+    --color-links-dark: rgb(29, 172, 214);
+    --color-links-darker: rgb(0, 57, 90);
+    --color-links-light: rgb(210, 238, 247);
+    --color-links-lighter: rgba(255 255 255);
+
+    --color-siteheader-background: transparent;
+    --color-siteheader-links: rgb(255 255 255 / 1);
+
+    --color-hero-background: rgb(100 100 100);
+    --color-hero-text: rgb(255 255 255 / .8);
+    --color-hero-headings: rgb(255 255 255 /1);
+
+    --color-sitefooter-background: rgb(100 100 100);
+    --color-sitefooter-text: rgb(255 255 255 / .8);
+    --color-site-footer-headings: rgb(250, 114, 104);
+    --color-sitefooter-links: rgb(255 255 255);
+
+    --color-palette-coral: rgb(250, 114, 104);
+    --color-palette-lightblue: rgb(210, 238, 247);
+    --color-palette-cerulean: rgb(29, 172, 214);
+    --color-palette-navy: rgb(0, 57, 90);
+
+    /* DEFINE ALL FONTS USED HERE */
+    --font-body: "Lato", system-ui, Helvetica, Arial, sans-serif;
+    --font-headings: "Playfair Display", system-ui, Helvetica, Arial, sans-serif;
+    --font-fancy: "corinthia";
+
+    /* SIZING UNITS */
+    --container-width: 1100px;
+    --unit-small: 1em;
+    --unit-medium: 2em;
+    --unit-large: 4em;
+
+    /* CARDS */
+    --info-card-width: 300px;
+    --info-card-height: 400px;
+    --basic-card-width: 400px;
+    --card-border-radius: 10px;
+}
+
+/* GLOBAL RESET */
+
+/* CHANGE BOX-SIZING FOR ALL TO BORDER-BOX */
+* { box-sizing: border-box; }
+
+/* REMOVE THE DEFAULT 8px MARGIN ON THE BODY */
+body { 
+    margin: 0; 
+
+ /* GLOBAL COLORS */
+
+    /* SET THE COLOR OF THE MAIN BODY BACKGROUND */
+    background-color: var(--color-body-background);
+
+    /* SET THE COLOR OF THE MAIN BODY TEXT */
+    color: var(--color-text-body);
+
+}
+
+/* SET THE COLOR OF ALL THE HEADINGS H1-etc */
+h1, h2, h3, h4 {
+    color: var(--color-text-headings);
+}
+
+a {
+
+    /* REMOVE LINK UNDERLINE */
+    text-decoration: none;
+
+    /* SET THE COLOR OF ALL TEXT LINKS */
+    color: var(--color-links);
+
+    /* SET THE COLOR OF ALL HOVER STATES ON TEXT LINKS */
+    &:hover {
+        color: var(--color-links-hover);
+    }
+
+}
+
+/* GLOBAL TYPOGRAPHY */
+body {
+
+    /* SET THE FONT FOR ALL MAIN BODY TEXT */
+    font-family: var(--font-body);
+
+    /* SET THE LEADING (LINE-HEIGHT) FOR ALL BODY TEXT */
+    line-height: 1.4;
+
+}
+
+/* SET THE FONT FOR ALL HEADINGS */
+h1, h2, h3 {
+    font-family: var(--font-headings);
+    margin: .4em 0;
+}
+
+h1 {
+    /* SET H1 FONT SIZE AND LEADING */
+    font-size: 3em;
+    line-height: 1.1;
+}
+
+h2 {
+    /* SET H2 FONT SIZE AND LEADING */
+    font-size: 2em;
+    line-height: 1.2;
+}
+
+h3 {
+    /* SET H3 FONT SIZE AND LEADING*/
+    font-size: 1.5em;
+    line-height: 1.3;
+}
+
+h4 {
+    margin: 0;
+}
+
+p {
+    /* TEXT WRAP TO AVOID WIDOWS AND ORPHANS */
+    text-wrap: pretty;
+}
+
+/* FANCY HEADING CUSTOM SPAN FONT */
+.fancy-heading {
+
+    h1 span {
+        display: block;
+        color: var(--color-palette-coral);
+        font-family: var(--font-fancy);
+        font-size: 2.3em;
+        transform: rotate(-7deg);
+        margin-top: -0.2em;
+        margin-bottom: -0.4em;
+    }
+    
+}
+
+/* GLOBAL MEDIA */
+
+/* MAKE ALL IMAGES SHRINK ON SMALL SCREENS */
+img {
+    max-width: 100%;
+    height: auto; /* ONLY WORKS WHEN IMG HTML HAS A WEIGHT AND HEIGHT SET */
+}
+
+/* GLOBAL HELPERS */
+
+/* HIDE ELEMENTS VISUALLY BUT NOT FROM SCREEN READERS AND SEARCH ENGINES */
+.hide-visually {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+@media (max-width: 767px) {
+    .hide-visually-smallonly {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .text-centered-mobile {
+        text-align: center;
+    }
+
+
+    /* ATTENTION CHRIS. I CHANGED FROM A P TO A * BELOW. I COULD ADD THIS HELPER CLASS ON EVERYTHING THAT NEEDS CENTERING ON MOBILE, BUT IS THERE A ROBUST WAY TO DO IT WITHOUT A HELPER CLASS? */
+    .block-centered-mobile {
+        > * {
+        margin-left: auto;
+        margin-right: auto;
+        }
+    }
+}
+
+/* BORDER RADIUS */
+.top-rounded {
+    border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+}
+
+.bottom-rounded {
+    border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
+}
+
+.all-rounded {
+    border-radius: var(--card-border-radius);
+}
+
+/* TEXT CENTERING */
+
+.text-centered {
+    text-align: center;
+}
+
+/* START NEW LINE */
+.next-line {
+    display: block;
+}
+
+/* FLOAT IMAGE RIGHT */
+@media (min-width: 768px) {
+
+    .float-right img {
+        float: right;
+    }   
+}
+
+
+/* --------------------- */
+/* -------LAYOUT-------- */
+/* --------------------- */
+
+/* RESPONSIVE TYPOGRAPHY VIA MEDIA QUERIES */
+
+/* SMALL SCREENS (Mobile < 768px) */
+body {
+    /* SET DEFAULT FONT SIZE TO 14px ( browser's default is 16px at 100%. */
+    font-size: 87.5%;
+}
+
+/* MEDIUM SCREENS (768px < Tablets < 1200px) */
+@media (min-width: 768px) {
+    body {
+        /* SET THE MEDIUM SCREENS AND HGHER FONT SIZE TO 16px */
+        font-size: 100%;
+    }
+}
+
+/* LARGE SCREENS (1200 px < Laptops & Desktops) */
+@media (min-width: 1200px) {
+    body {
+        /* SET THE MEDIUM SCREENS AND HGHER FONT SIZE TO 16px */
+        font-size: 112.5%;
+    }
+}
+
+/* LIMIT CHARACTER WIDTH ON SMALL BROWSERS */
+
+@media (max-width: 767px) {
+    /* LIMIT THE WIDTH TO 65 characters. */
+    h3, h4, p {
+        max-width: 65ch;
+    }
+
+
+    /* EXCEPTION FOR THE ADDRESS IN THE SITE-FOOTER */
+    .site-footer p {
+        max-width: none;
+    }
+}
+
+
+/* CONTAINER */
+.container {
+    /* SET THE MAX WIDTH OF YOUR SITE (eg 1200px) */
+    max-width: var(--container-width);
+
+    /* CENTER THE CONTAINER HORIZONTALLY */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* GRID */
+.row {
+    --gridgap: 2em;
+}
+
+.row > * {
+    margin-bottom: var(--gridgap);
+    margin-top: var(--gridgap);
+}
+
+@media (min-width: 768px) {
+    .row {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--gridgap);
+    }
+
+    /* COMMONLY USED SEMANTIC COLUMN WIDTHS */
+    .one-half {grid-column: auto / span 6;}
+    .one-third {grid-column: auto / span 4;}
+    .two-thirds {grid-column: auto / span 8;}
+    .one-fourth {grid-column: auto / span 3;}
+    .three-fourths {grid-column: auto / span 9;}
+
+    /* 12 COLUMN CLASSES */
+    .col-1 {grid-column: auto / span 1;}
+    .col-2 {grid-column: auto / span 2;}
+    .col-3 {grid-column: auto / span 3;}
+    .col-4 {grid-column: auto / span 4;}
+    .col-5 {grid-column: auto / span 5;}
+    .col-6 {grid-column: auto / span 6;}
+    .col-7 {grid-column: auto / span 7;}
+    .col-8 {grid-column: auto / span 8;}
+    .col-9 {grid-column: auto / span 9;}
+    .col-10 {grid-column: auto / span 10;}
+    .col-11 {grid-column: auto / span 11;}
+    .col-12 {grid-column: auto / span 12;}
+
+    /* COMMONLY CENTERED COLUMNS */
+    .one-half.centered-gridcol {grid-column: 4 / span 6;}
+    .one-third.centered-gridcol {grid-column: 5 / span 4;}
+    .two-thirds.centered-gridcol {grid-column: 3 / span 8;}
+
+    /* PUSHES */
+    .push-1 {grid-column-start: 2;}
+    .push-2 {grid-column-start: 3;}
+    .push-3 {grid-column-start: 4;}
+    .push-4 {grid-column-start: 5;}
+    .push-5 {grid-column-start: 6;}
+    .push-6 {grid-column-start: 7;}
+    .push-7 {grid-column-start: 8;}
+    .push-8 {grid-column-start: 9;}
+    .push-9 {grid-column-start: 10;}
+    .push-10 {grid-column-start: 11;}
+    .push-11 {grid-column-start: 12;}
+
+    /* SWAP (REVERSE) COLUMNS WORKS ONLY W/ 2 CHILDREN */
+    .row.swapped > *:first-child { order: 2; }
+    .row.swapped > *:last-child { order: 1; }
+
+}
+
+/* CHANGE MARGIN TO 0 ON ALL CHILDREN OF A ROW - OVERRIDE LINE 304*/
+#timeline-sec .row > * { 
+    margin: 0;
+}
+
+/* FOR DEMO PURPOSES */
+
+/* .demo > * {
+    background-color: #444;
+    padding: 1em;
+    text-align: center;
+} */
+
+/* ---------------------- */
+/* --- SITE STRUCTURE --- */
+/* ---------------------- */
+
+/* SITE HEADER */
+.site-header {
+    background-color: var(--color-siteheader-background);
+
+    /* PUT ALL HEADER CHILDREN SIDE-BY-SIDE AND CENTER ON LARGE SCREENS */
+    @media (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        /* align-items: center; */
+    }
+
+    /* ADD SOME GENERAL SPACING/PADDING AROUND THE HEADER */
+    padding: var(--unit-small);
+
+
+    /* SITE LOGO */
+    .site-logo {
+
+        /* PUT SITE LOGO CHILDREN SIDE-BY-SIDE AND CENTER*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+
+        /* PLACE LOGO ON TOP OF DRAWER MENU */
+        /* NOTE: LOGO WILL SCROLL AWAY - NEED TO ADD SUPPORT FOR FIXED LOGO */
+        /* position: relative; */
+        z-index: 100;
+
+        /* REMOVE MARGINS AND RESIZE H1 INSIDE HEADER */
+        h1 {
+            font-size: 2em;
+            margin: 0;
+            text-wrap: no-wrap;
+        }
+
+        /* REMOVE THE SPACE UNDER THE LOGO MARK */
+        img, svg {
+            display: block;
+        }
+
+
+    }
+
+    /* SITE NAV */
+    .site-header-nav {
+
+        ul {
+            /* REMOVE MARGINS & BULLETS FROM LIST */
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+        }
+        
+        /* MAKE SITE NAV LINKS BIG LIKE BUTTONS */
+        a {
+            display: block;
+            padding: 1em;
+        }
+
+    }  
+}
+
+
+/* TOGGLE MENU */
+
+/* HIDE MENU BUTTON IF NOT USING TOGGLE NAV */
+.site-menu-button {
+    display: none;
+}
+
+
+@media (max-width: 1200px) {
+
+    .toggle-menu {
+
+        /* SET TOGGLE MENU COLORS */
+        --color-togglemenu-background: var(--color-palette-navy);
+        --color-togglemenu-text: var(--color-siteheader-links);
+
+
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+
+        /* SHOW MENU BUTTON IF USING TOGGLE NAV */
+        .site-menu-button {
+            display: block;
+            background-color: transparent;
+            border: 1px solid var(--color-siteheader-links);
+            color: var(--color-siteheader-links);
+            padding: .5em; 
+            position: relative;
+            z-index: 100;
+            transition: .4s all ease-out;
+
+            /* RESET BUTTON FONT SIZE TO SAME AS SITE HEADER NAV */
+            font-size: inherit;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            /* ADD SUPPORT FOR NAVICON / HAMBURGER ICON */
+            &:has(svg) {
+
+                /* VERTICALLY ALIGN THE MENU TEXT W ICON */
+                display: flex;
+                align-content: center;
+                gap: var(--unit-small);
+
+                /* REMOVE BORDER */
+                border: none;
+
+                /* SET THE COLOR OF THE SVG TO MATCH */
+                svg {
+                    fill: var(--color-siteheader-links);
+                }
+
+                /* ADD SUPPORT FOR SVG ANIMATION. THIS IS NESTED INSIDE A HAS SVG ELEMENT, AND THEN THE LINE BELOW CONVEYS ALL CHILDREN OF AN SVG */
+                svg > * {
+                    transition: .4s all ease-out;
+                    transform-origin: center;
+                }
+
+            }
+
+        }
+
+
+        .site-menu {
+
+            /* SET COLORS TO TOGGLE MENU COLORS */
+            background-color: var(--color-togglemenu-background);
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 50;
+            width: 100%;
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: calc(1.7vw + 1.7vh);
+            /* font-size: clamp(1.5em, 2.5vw, 6em); */
+            transition: .4s all ease-out;
+
+            a {
+                color: var(--color-togglemenu-text);
+                padding: 1vh 2vw;
+
+                &:hover {
+                    color: var(--color-links-hover);
+                }
+            }
+
+        }
+
+        &[data-menustate="open"] {
+
+            /* CHANGE COLORS TO TOGGLE MENU COLORS */
+            color: var(--color-togglemenu-text);
+
+            /* SET MENU BUTTON TO FIXED WHEN MENU IS OPEN */
+            .site-menu-button {
+                position: fixed;
+                z-index: 100;
+            }
+
+            /* SHOW THE SITE MENU WHEN OPEN */
+            .site-menu {
+                transform: translateX(0);
+            }
+
+            /* ANIMATE THE NAVICON / HAMBURGER ICON */
+            /* ADD SUPPORT FOR NAVICON / HAMBURGER ICON */
+            .site-menu-button svg {
+
+                .simple-navicon-top {
+                    width: 100%;
+                    translate: -21% 25%; 
+                    rotate: 45deg;
+                }
+                .simple-navicon-middle {
+                    opacity: 0;
+                }
+                .simple-navicon-bottom {
+                    width: 100%;
+                    rotate: -45deg;
+                    translate: -21% -25%;
+                }
+            }
+        }
+
+        &[data-menustate="closed"] {
+
+            /* MOVE THE SITE MENU TO THE RIGHT WHEN CLOSED */
+            .site-menu {
+                transform: translateX(100%);
+            }
+        }
+    }
+
+}
+
+/* IF TOGGLE MENU, DISPLAY LOGO ON LEFT AND MENU ON RIGHT ON ALL SCREENS */
+.site-header:has(.toggle-menu) {
+    display: flex;
+    justify-content: space-between;
+
+    .site-logo {
+        position: relative;
+        z-index: 100;
+    }
+}
+
+
+/* PLACE SITE HEADER ON TOP OF HERO */
+.site-header.on-top-of-hero {
+
+    /* RENDER HEADER ON TOP OF HERO ON LARGE SCREENS*/
+        position: absolute;
+        width: 100%;
+
+    /* SET SITE HEADER LINK COLOR ON LARGE SCREENS*/
+    a {
+        color: var(--color-siteheader-links);
+
+        &:hover {
+            color: var(--color-links-dark);
+        }
+    }
+
+    /* ADD MORE SPACE ON TOP FOR THE ABSOLUTE HEADER */
+    & + .site-main > .hero {
+        padding-top: calc(4em + var(--unit-large));
+    }
+
+}
+
+
+/* SITE MAIN */
+
+/* SECTIONS */
+section {
+    padding: var(--unit-large) var(--unit-small);
+}
+
+section:nth-child(odd) {
+    background-color: var(--color-palette-lightblue);
+}
+
+
+/* HERO SECTIONS*/
+
+.hero {
+    background-size: cover;
+    text-align: center;
+    color: var(--color-hero-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    h1 {
+        font-size: 4em;
+        line-height: 1;
+    }
+
+    h1, h2, h3 {
+        color: var(--color-hero-headings);
+    }
+
+}
+
+.bg-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* CHANGE Z-INDEX ON THESE ITEMS TO MAKE SURE THEY SIT ON TOP OF THE HEADER VIDEO */
+.hero .container {
+    z-index: 2;
+}
+
+.site-header-nav {
+    z-index: 2;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .bg-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .bg-video {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.hero-full {
+    height: 100vh;
+}
+
+.hero-sixty {
+    height: 60vh;
+}
+
+
+/* SITE FOOTER */
+.site-footer {
+    background-color: var(--color-palette-navy);
+    color: var(--color-palette-cerulean);
+
+    /* ADD SOME GENERAL SPACING/PADDING AROUND THE FOOTER */
+    padding: var(--unit-small);
+
+    h1, h2, h3 {
+        color: var(--color-site-footer-headings);
+    }
+
+    .button {
+        margin: 0 0 .2em 0;
+    
+        &:hover {
+            border: 2px dashed var(--color-palette-coral);
+        }
+    }
+
+    .site-footer-nav {
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            a {
+                color: var(--color-links-light);
+        
+                &:hover {
+                    color: var(--color-links-dark);
+                }
+            }
+        }
+    }
+
+    /* OVERRIDE OTHER MARGIN SETTINGS SO I CAN ALIGN FOOTER ITEMS */
+    h2 {margin: 0.4em 0 0 0;}
+    h3 {margin: 0 0 0.4em 0;}
+    p {margin: 0;}
+
+    .row {
+        align-items: end;
+    }
+
+}
+
+
+/* ------------------- */
+/* ---UI COMPONENTS--- */
+/* ------------------- */
+
+/* BUTTONS */
+
+.button {
+    /*  SET THE BUTTON COLORS */
+    border: 1px solid var(--color-links-dark);
+    background-color: var(--color-links-dark);
+    color: var(--color-links-lighter);
+    border-radius: var(--card-border-radius);
+    
+    /* ENABLE BOX MODEL STYLING  */
+    display: inline-block;
+    padding: var(--unit-small);
+    margin: var(--unit-small) 0;
+
+    /* TO ADD MARGIN BETWEEN A BUTTON THAT IMMEDIATELY FOLLOWS ANOTHER BUTTON, USING NESTING SYNTAX */
+    + .button {
+        margin-left: var(--unit-small);
+    }
+
+    &:hover {
+        color: #fff;
+        background-color: var(--color-links-darker);
+        border-color: var(--color-links-darker);
+    }
+
+    /* LIGHT BUTTON VARIANT */
+    &.light {
+        border-color: var(--color-links-light);
+        background-color: var(--color-links-light);
+        color: var(--color-links-darker);
+
+        &:hover {
+            border-color: var(--color-links-lighter);
+            background-color: var(--color-palette-coral);
+        }
+    }
+}
+
+/* BUTTONS WITH SPANS */
+.span-button {
+    line-height: 1.3;
+}
+    
+.span-button:hover .span-button-icon{
+    transition: 0.4s;
+    display: inline-block;
+    transform: translateX(10px);
+    color: var(--color-palette-cerulean);
+}
+
+.span-button-text {
+    font-size: 112.5%;
+    font-weight: bold;
+}
+
+.span-button-subtext {
+    font-size: 87.5%;
+}
+
+.span-button-icon svg {
+    margin-bottom: -3px;
+}
+
+
+/* CARDS */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* FLIP CARDS */
+
+/* OK TO USE WIDTH HERE BECAUSE IT WORKS WELL ON A BIG SCREEN. WE'RE SET TO FLEX ON A BIG SCREEN, AND FLEX NEEDS WIDTH, NOT MAX-WIDTH. */
+.flip-card {
+    background-color: transparent;
+    width: var(--info-card-width);
+    height: var(--info-card-height);
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    margin: 1em;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+}
+  
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+  
+.flip-card[data-flipstate="flipped"] .flip-card-inner {
+    transform: rotateY(180deg);
+}
+  
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden; /* PREVENTS REVERSE IMAGE FROM SHOWING UP ON BACKSIDE */
+}
+  
+.flip-card-back {
+    background-color: var(--color-palette-navy);
+    color: white;
+    transform: rotateY(180deg);
+}
+  
+/* WE USE MAX-WIDTH HERE TO MAKE THE CONTENT INSIDE THIS DIV RESPONSIVE, I.E., THE IMAGE */
+.frontside-content {
+    color: black;
+    max-width: var(--info-card-width);
+    height: var(--info-card-height);
+    /* SETTING THIS EMPTY PLACEHOLDER DIV TO RELATIVE SO THAT THE SUBSEQUENT THE H3 CAN BE ABSOLUTE POSITIONED TO THIS PARENT DIV. */
+    position: relative;
+
+    h3, h4 {
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        text-align: center;
+        color: white;
+        padding: 1em 1em 1.3em 1em;
+    }
+}
+  
+.backside-content * {
+    padding: 30px;
+}
+
+
+/* TRANSPARENCY CARDS */
+
+.transparent-card {
+    width: var(--info-card-width);
+    height: var(--info-card-height);
+    margin: 1em;
+    position: relative;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+}
+  
+.transparent-card-image {
+    opacity: 0.3;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+  
+.transparent-card-label-div {
+    transition: .5s ease;
+    opacity: 1;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+
+    h3 {
+        color:white;
+    }
+}
+
+.transparent-card-label {
+    background-color: rgba(0 57 90 / 0.7);
+    color: white;
+    padding: 2em;
+
+    a {
+        color: var(--color-links-light);
+
+        &:hover {
+            color: var(--color-links-lighter);
+        }
+    }
+}
+
+.trigger .hideaway {
+    display: none;
+}
+
+.trigger.show .hideaway {
+    display: block;
+}
+
+/* BASIC CARDS */
+.basic-card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: var(--basic-card-width);
+    height: 100%;
+    margin: 1em;
+  
+    img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+}
+
+/* On mouse-over, add a deeper shadow */
+.basic-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
+/* Add some padding inside the card container */
+.basic-card-container {
+    padding: 2px 16px;
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+/* TIMELINE */
+
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h4 {
+        font-weight: 500;
+    }
+}
+
+/* VERTICAL LINE */
+
+.timeline::after { 
+    /* THIS CREATES A PSEUDO ELEMENT THAT MAKES THE LINE THE LAST CHILD OF .TIMELINE */
+    content: '';
+    position: absolute;
+    width: 12px;
+    background-color: var(--color-palette-coral);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    /* ROUGHLY HALF OF WIDTH ABOVE. THIS WILL ALWAYS BE SLIGHTLY OFF BECAUSE OF THE WAY THE CONTAINERS ARE OFFSET. TO SEE WHAT I MEAN, ADD A 1px GREEN BORDER TO .CONTAINER */
+    margin-left: -5px; 
+}
+
+  
+/* CONTAINER AROUND EACH CONTENT RECTANGLE */
+.timeline-container {
+    /* CHOOSE YOUR OWN PADDING. I CHOSE A VALUE THAT MAKES THE POINTING ARROWS TOUCH THE CONTENT BOX */
+    padding: 10px 39px; 
+    position: relative;
+    /* THE INHERIT PROPERTY WILL MAKE SURE THAT THE .CONTAINER BACKGROUND COLOR ALWAYS MATCHES BODY BACKGROUND COLOR. THEN AGAIN, COULDN'T WE ALWAYS JUST NOT ADD A .CONTAINER BACKGROUND COLOR AT ALL? ASK CHRIS. */
+    background-color: inherit; 
+    width: 50%;
+}
+  
+/* CIRCLES ON VERTICAL LINE */
+
+/* THIS CREATES A PSEUDO ELEMENT THAT MAKES THE CIRCLES THE LAST CHILD OF .CONTAINER */
+.timeline-container::after { 
+    content: '';
+    position: absolute;
+    /* WIDTH OF CIRCLE */
+    width: 25px; 
+    /* HEIGHT OF CIRCLE */
+    height: 25px; 
+    /* POSITIONS EVERY ODD NUMBERED CIRCLE 17px FARTHER RIGHT  */
+    right: -17px; 
+    background-color: var(--color-siteheader-links);
+    border: 4px solid var(--color-palette-coral);
+    /* POSITIONS CIRCLES 15px BELOW TOP EDGE OF CONTAINER BOX */
+    top: 15px; 
+    border-radius: 50%;
+    /* ARRANGES FOR CIRCLES TO STACK ON TOP OF THE LINE */
+    z-index: 100; 
+}
+  
+.timeline-right::after {
+    left: -16px; /* POSITIONS EVERY EVEN NUMBERED CIRCLE 16px FARTHER LEFT  */
+}
+  
+/* PLACE LEFT CONTAINERS TO THE FAR LEFT EDGE OF TIMELINE BOUNDARY*/
+.timeline-left {
+    left: 0;
+}
+  
+/* PLACE RIGHT CONTAINERS STARTING AT HALFWAY MARK OF TIMELINE BOUNDARY */
+.timeline-right {
+    left: 50%;
+}
+  
+/* LEFT CONTAINER ARROWS POINTING RIGHT */
+
+/* THIS CREATES A PSEUDO ELEMENT THAT MAKES THE ARROW THE FIRST CHILD OF .LEFT */
+.timeline-left::before { 
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--color-palette-lightblue);
+    animation: expand-appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+  
+/* RIGHT CONTAINER ARROWS POINTING LEFT */
+
+/* THIS CREATES A PSEUDO ELEMENT THAT MAKES THE ARROW THE FIRST CHILD OF .RIGHT */
+.timeline-right::before { 
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--color-palette-lightblue) transparent transparent;
+    animation: expand-appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+  
+/* CUSTOMIZING THE ACTUAL CONTENT BOX */
+.timeline-content-box {
+    padding: 20px 30px;
+    background-color: var(--color-palette-lightblue);
+    position: relative;
+    border-radius: var(--card-border-radius);
+}
+
+
+/* LEFT JUSTIFIED TIMELINE FOR SMALL SCREENS */
+@media (max-width: 600px) {
+    
+    .timeline::after {
+        left: 31px;
+    }
+        
+    .timeline-container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    }
+        
+    .timeline-container::before {
+        left: 60px;
+        border: medium solid red;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--color-palette-lightblue) transparent transparent;
+    }
+
+    .timeline-left::after, .timeline-right::after {
+        left: 15px;
+    }
+
+    .timeline-right {
+        left: 0%;
+    }
+}
+
+/* --------------- */
+/* -- ANIMATION -- */
+/* --------------- */
+
+/* ENABLE NATIVE SMOOTH SCROLLING */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ONSCROLL TRIGGERED ANIMATION */
+.observe-me {
+    opacity: 0;
+    transition: all 1s ease-out .2s;
+
+    &[data-viewstate="active"] {
+        opacity: 1;
+    }
+
+
+}
+
+.animate-from-upperleft {
+    translate: -20px -20px;
+    &[data-viewstate="active"] {
+        translate: 0 0;
+    }
+}
+
+.animate-from-lowerright {
+    translate: 20px 20px;
+    transition-delay: 1s;
+    &[data-viewstate="active"] {
+        translate: 0 0;
+    }
+}
+
+/* ONSCROLL TRIGGERED EXPAND */
+.expand {
+    animation: expand-appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+@keyframes expand-appear {
+    0% {
+        opacity: 0;
+        scale: 0.5;
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+
+/* -------------------- */
+/* -- CUSTOM STYLING -- */
+/* -------------------- */
+
+
+/* PHOTO BLOCK */
+.photo-block {
+    padding: 0;
+
+    .photo-block-inner {
+        display: flex;
+
+        > * {
+            width: 100%;
+        }
+    }
+
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .photo-block {
+        padding: 0;
+
+        .photo-block-inner {
+            display: block;
+        }
+    }
+}
+
+
+/* PARALLAX */
+.parallax {
+    min-height: 300px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+    h1 {
+        color: var(--color-links-lighter);
+    }
+}
+
+#parallax-homepage {
+    background-image: url(../img/Koolau-range.jpg);
+}
+
+#parallax-stories1 {
+    background-image: url(../img/Diamond-Head.jpg);
+}
+
+#parallax-stories2 {
+    background-image: url(../img/Molokai-beach.jpg);
+}
+
+#parallax-stories3 {
+    background-image: url(../img/Pumpkin-patch.jpg);
+}
+
+#parallax-event-day {
+    background-image: url(../img/Diamond-Head.jpg);
+}
+
+@media (min-width: 768px) {
+    .col-split {
+        column-span: all;
+        column-count: 2;
+    }
+}
+
+/* CUSTOM HEROS ON OTHER PAGES */
+/* .hero-homepage {
+    background-image: url(../img/KualoaRanch.jpg);
+    background-position: 30%;
+} */
+
+.hero-stories {
+    background-image: url(../img/Rocky-Mountain.jpg);
+    background-position: 50% 85%;
+}
+
+.hero-event-day {
+    background-image: url(../img/Hawaii-Meeting-Room-Oahu.jpg);
+    background-position: center;
+
+    h1 {
+        color: var(--color-text-headings);
+    }
+}
+
+/* TIMELINE FOOTNOTE TEXT */
+#timeline-sec {
+    p span {
+        display: block;
+        font-size: 80%;
+        margin-top: 0.7em;
+        color: rgba(0 0 0 / 0.5);
+    }
+}
+
+/* LOCATION PAGE */
+
+/* CENTER SIDE-BY-SIDE BUTTONS ON MOBILE */
+@media (max-width: 767px) {
+    .location > * {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
+
+
+/* DISPLAY SVGS AS BLOCK */
+#driving-directions svg {
+    color: var(--color-palette-coral);
+    display: block;
+    margin-bottom: 0.6em;
+}
+
+
+/* to dos
+
+ask Chris why my "Directions" header won't center even when I set h3 max width to 65 characters, and the parent has auto margins on (with a helper class)
+
+what's the robust way to re-center a block level item when a max width has been set, like with the character count?
+
+button animation in mobile state ok?
+ok to keep animations in mobile?
+
+on mobile, how do I make sure me and Paul are still in frame in the hero video?
+
+done
+add helper class for top, bottom, and all rounded border radius
+add row of 3 side-by-side images
+fixed font size on mobile nav toggle menu
+fix envelope svg
+arrange footer content
+Ask Chris what triggers flip or hover cards to need a click to activate - it's not the pixel size. How does the ui know it's in mobile? answer: probably pixel width? don't trust dev tools's mobile version on a computer
+add parallax
+Ask Chris how to set viewport on a picture to a slim area
+fix footer on mobile
+fix the tiny bottom margin on cards
+fix simplebase and change data navstate to closed
+my bottom of homepage pictures are their actual size. How do I set the size? photoshop
+javascript click to reveal on transparent cards only working on first card
+ask Chris how to vertical center my footer items - he didn't recommend this. Instead design it to look nice. Try rearranging pieces in photoshop.
+ask Chris why my helper classes .text-centered and .centered-mobile work using text-align: center, and not margin: 0 auto; I learned the answer on my own. It's not the same thing. margin auto still keeps it left-justified, whereas text-align center does not. and margin auto only works on block level elements that are set to display as block.
+ask Chris how to make my invitations align to the right side - figured out how to use float
+*/
+
+/* #location-sec .row > *{ */
+    /* row */
+    /* border: 1px solid red; */
+
+    /* column */
+    /* > * {
+        border: 1px solid green; */
+
+        /* direct child of column */
+        /* > * {
+            border: 1px solid greenyellow;
+        }
+    }
+ 
+} */
+
+.width-test {
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+}
